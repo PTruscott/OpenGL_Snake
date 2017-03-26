@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/mockito-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/guava-17.0-rc2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/mockito-all-1.10.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lwjgl">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/AppleJavaExtensions.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/laf-widget-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/lwjgl_test.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/log4j-api-2.0-beta9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/lzma.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/lwjgl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/trident-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/jinput.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/lwjgl-debug.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/asm-debug-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/lwjgl_util_applet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/substance-7.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/lwjgl_util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jar/lwjgl/laf-plugin-7.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

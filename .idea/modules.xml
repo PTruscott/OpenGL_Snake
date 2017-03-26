@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OpenGL_Snake.iml" filepath="$PROJECT_DIR$/OpenGL_Snake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/client/client.iml" filepath="$PROJECT_DIR$/test/client/client.iml" />
+    </modules>
+  </component>
+</project>
