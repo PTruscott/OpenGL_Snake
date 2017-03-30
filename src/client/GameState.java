@@ -14,28 +14,33 @@ import static client.ClientSettings.*;
  * Used to control the current game state
  */
 public class GameState {
-    private Block[][] blocks;
+    private Block[][][] blocks;
     private int phase;
     private Vector2 head;
     private int snakeLength;
     private boolean gameRunning;
 
-    public GameState(Vector2 head) {
-        this.head = head;
+    public GameState() {
+        head = new Vector2(7, 10);
         snakeLength = STARTING_LENGTH;
         gameRunning = false;
         Random rand = new Random();
         phase = rand.nextInt(4);
 
-        blocks = new Block[getMapWidth()][getMapHeight()];
-        blocks[5][8] = new Wall(phase);
-        blocks[5][9] = new Wall(phase);
-        blocks[5][10] = new Wall(phase);
-        blocks[5][11] = new Wall(phase);
+        blocks = new Block[4][getMapWidth()][getMapHeight()];
+        for (int i = 0; i < 4; i++) {
+            for (int x = 0; x < getMapWidth(); x++) {
+                for (int y = 0; y < getMapHeight(); y++) {
+                    if (x == 0 || y == 0 || y == getMapHeight()-1 || x == getMapWidth()-1) {
+                        blocks[i][x][y] = new Wall(i);
+                    }
+                }
+            }
+        }
 
-        blocks[7][10] = new Snake(true, null);
+        blocks[phase][7][10] = new Snake(true, null);
 
-        blocks[10][17] = new Food(phase);
+        blocks[phase][10][17] = new Food(phase);
 
     }
 
@@ -60,19 +65,19 @@ public class GameState {
     }
 
     public Block[][] getBlocks() {
-        return blocks;
+        return blocks[phase];
     }
 
     public Block getBlock(Vector2 pos) {
-        return blocks[(int)pos.getX()][(int)pos.getY()];
+        return blocks[phase][(int)pos.getX()][(int)pos.getY()];
     }
 
     public void setBlock(Block b, Vector2 pos) {
-        blocks[(int)pos.getX()][(int)pos.getY()] = b;
+        blocks[phase][(int)pos.getX()][(int)pos.getY()] = b;
     }
 
     public void clearBlock(Vector2 pos) {
-        blocks[(int)pos.getX()][(int)pos.getY()] = null;
+        blocks[phase][(int)pos.getX()][(int)pos.getY()] = null;
     }
 
     public int getPhase() {

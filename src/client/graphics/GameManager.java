@@ -225,7 +225,7 @@ public class GameManager {
 
     private void resetGame() {
         counter = 0;
-        game = new GameState(new Vector2(7, 10));
+        game = new GameState();
         if (gameRenderer != null) {
             gameRenderer.updateGameState(game);
         }
@@ -234,6 +234,7 @@ public class GameManager {
             game.startGame();
             dir = new Vector2(1, 0);
         }
+        getDelta();
     }
 
     public static void out(Object o) {
