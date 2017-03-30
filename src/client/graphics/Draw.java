@@ -4,6 +4,7 @@ import client.ClientSettings;
 import client.Vector2;
 import client.blocks.Block;
 import client.blocks.Food;
+import client.blocks.Portal;
 
 import static client.ClientSettings.*;
 import static client.graphics.GameManager.out;
@@ -31,61 +32,20 @@ class Draw {
     }
 
 
-    /**
-     * draws a cube
-     * @param centre the centre of the cube
-     * @param rotation how much it's rotated
-     * @param radius the radius of the cube
-     * @param red the red component
-     * @param green the green component
-     * @param blue the blue component
-     * @param glow whether it glows or not
-     */
-    void drawQuad(Vector2 centre, float rotation, float radius, float red, float green, float blue, boolean glow) {
-        glColor4f(red, green, blue, 1);
+    private static void drawQuad(float x, float y, float rotation, float width, float height, Colour colour) {
+        setColour(colour);
         glPushMatrix();
-        float cx = centre.getX();
-        float cy = height-centre.getY();
+        float cx = x;
+        float cy = SCREEN_HEIGHT-y;
         glTranslatef(cx, cy, 0);
         glRotatef(rotation, 0f, 0f, 1f);
         glTranslatef(-cx, -cy, 0);
         glBegin(GL_QUADS);
-        glVertex2f(cx-radius, height-(centre.getY()-radius));
-        glVertex2f(cx+radius, height-(centre.getY()-radius));
-        glVertex2f(cx+radius, height-(centre.getY()+radius));
-        glVertex2f(cx-radius, height-(centre.getY()+radius));
+        glVertex2f(cx, SCREEN_HEIGHT-y);
+        glVertex2f(cx+width, SCREEN_HEIGHT-y);
+        glVertex2f(cx+width, SCREEN_HEIGHT-(y+height));
+        glVertex2f(cx, SCREEN_HEIGHT-(y+height));
         glEnd();
-
-        if (glow) {
-            glBegin(GL_QUAD_STRIP);
-
-            float intensity = 0.8f;
-            glColor4f(red, green, blue, 0);
-            glVertex2f(cx - radius * 2, cy - radius * 2);  //outer bottom left
-            glColor4f(red, green, blue, intensity);
-            glVertex2f(cx - radius, cy - radius); //inner bottom left
-            glColor4f(red, green, blue, 0);
-            glVertex2f(cx + radius * 2, cy - radius * 2); //outer bottom right
-            glColor4f(red, green, blue, intensity);
-            glVertex2f(cx + radius, cy - radius); //inner bottom right
-            glColor4f(red, green, blue, 0);
-            glVertex2f(cx + radius * 2, cy + radius * 2); //outer top right
-            glColor4f(red, green, blue, intensity);
-            glVertex2f(cx + radius, cy + radius); //inner top right
-            glColor4f(red, green, blue, 0);
-            glVertex2f(cx - radius * 2, cy + radius * 2); //outer top left
-            glColor4f(red, green, blue, intensity);
-            glVertex2f(cx - radius, cy + radius); //inner top left
-            glColor4f(red, green, blue, 0);
-            glVertex2f(cx - radius * 2, cy - radius * 2);  //outer bottom left
-            glColor4f(red, green, blue, intensity);
-            glVertex2f(cx - radius, cy - radius); //inner bottom left
-
-            glEnd();
-        }
-        else {
-            out("Quad rotate: "+rotation);
-        }
 
         glPopMatrix();
     }
@@ -158,6 +118,10 @@ class Draw {
             drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/5, colour.red, colour.green, colour.blue);
         }
         else {
+            if (b instanceof Portal) {
+                Colour other = ((Portal) b).getOtherColour();
+                drawQuad(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, other);
+            }
             invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
         }
     }

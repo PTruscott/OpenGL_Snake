@@ -1,9 +1,6 @@
 package client;
 
-import client.blocks.Block;
-import client.blocks.Food;
-import client.blocks.Snake;
-import client.blocks.Wall;
+import client.blocks.*;
 
 import java.util.Random;
 
@@ -37,6 +34,8 @@ public class GameState {
                 }
             }
         }
+
+        blocks[phase][10][20] = new Portal(phase, 1);
 
         blocks[phase][7][10] = new Snake(true, null);
 
