@@ -1,15 +1,13 @@
 package client.graphics;
 
-import static client.ClientSettings.*;
-import static client.graphics.GameManager.out;
-import static org.lwjgl.opengl.GL11.*;
-
 import client.ClientSettings;
 import client.Vector2;
 import client.blocks.Block;
 import client.blocks.Food;
 
-import java.awt.image.ByteLookupTable;
+import static client.ClientSettings.*;
+import static client.graphics.GameManager.out;
+import static org.lwjgl.opengl.GL11.*;
 
 /**
  * Created by peran on 3/5/17.

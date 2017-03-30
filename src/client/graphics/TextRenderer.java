@@ -1,13 +1,8 @@
 package client.graphics;
 
+import client.ClientSettings;
 
-/**
- * Created by Patrick on 3/6/2017.
- * Can't believe this is the equivalent of System.out.println();
- */
-
-    import client.ClientSettings;
-    import java.awt.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
