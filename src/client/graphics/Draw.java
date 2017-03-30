@@ -1,8 +1,7 @@
 package client.graphics;
 
-import static client.ClientSettings.BLOCK_SIZE;
-import static client.ClientSettings.SCREEN_HEIGHT;
-import static client.ClientSettings.SCREEN_WIDTH;
+import static client.ClientSettings.*;
+import static client.graphics.GameManager.out;
 import static org.lwjgl.opengl.GL11.*;
 
 import client.ClientSettings;
@@ -87,7 +86,7 @@ class Draw {
             glEnd();
         }
         else {
-            System.out.println("Quad rotate: "+rotation);
+            out("Quad rotate: "+rotation);
         }
 
         glPopMatrix();
@@ -366,7 +365,9 @@ class Draw {
      * @param phase which phase you're in
      */
     void colourBackground(int phase) {
-        glColor4f(phase*0.1f,0,(1-phase)*0.1f,1f);
+        Colour c = PHASE_COLOURS[phase].clone();
+        c.intensity = 0.1f;
+        setColour(c);
         drawRect(0,0,width,height);
     }
 
@@ -420,6 +421,10 @@ class Draw {
         glVertex2f(checkX(xStart + rectWidth), checkY(SCREEN_HEIGHT - (yStart+rectHeight)));
         glVertex2f(checkX(xStart), checkY(SCREEN_HEIGHT - (yStart+rectHeight)));
         glEnd();
+    }
+
+    private static void setColour(Colour c) {
+        glColor4f(c.red,c.green,c.blue,c.intensity);
     }
 
     /**

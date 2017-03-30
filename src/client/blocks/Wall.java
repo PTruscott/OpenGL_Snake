@@ -10,6 +10,6 @@ public class Wall extends Block {
     public Wall(int phase) {
         this.phase = phase;
         this.collidable = true;
-        this.colour = PHASE_COLOURS[phase];
+        this.colour = PHASE_COLOURS[phase].clone();
     }
 }

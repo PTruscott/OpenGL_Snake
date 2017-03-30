@@ -20,4 +20,15 @@ public class Colour {
         this.green = green;
         this.intensity = intensity;
     }
+
+    private Colour(Colour c) {
+        this.red = c.red;
+        this.blue = c.blue;
+        this.green = c.green;
+        this.intensity = c.intensity;
+    }
+
+    public Colour clone() {
+        return new Colour(this);
+    }
 }

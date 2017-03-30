@@ -42,8 +42,8 @@ class GameRenderer {
 
     private void drawMap() {
         Block[][] b = game.getBlocks();
-        for (int i = 0; i < SCREEN_WIDTH/BLOCK_SIZE; i++) {
-            for (int j = 0; j < SCREEN_HEIGHT/BLOCK_SIZE; j++) {
+        for (int i = 0; i < game.getMapWidth(); i++) {
+            for (int j = 0; j < game.getMapHeight(); j++) {
                 if (b[i][j] != null) {
                     draw.drawBlock(i, j, b[i][j]);
                 }

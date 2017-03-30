@@ -41,8 +41,9 @@ public class ClientSettings {
       new Colour(1, 0, 0), //phase 0
       new Colour(0, 1, 0), //phase 1
       new Colour(0, 0, 1), //phase 2
-      new Colour(0, 1, 1)  //phase 3
+      new Colour(1, 1, 0)  //phase 3
     };
+    public static float MIN_SNAKE_GLOW = 0.2f;
 
 
 

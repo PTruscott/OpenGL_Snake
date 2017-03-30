@@ -1,16 +1,11 @@
 package client;
 
-import client.blocks.Block;
-import client.blocks.Food;
-import client.blocks.Snake;
-import client.blocks.Wall;
 import client.graphics.*;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 
-import static client.ClientSettings.BLOCK_SIZE;
 import static client.ClientSettings.SCREEN_HEIGHT;
 import static client.ClientSettings.SCREEN_WIDTH;
 import static org.lwjgl.opengl.GL11.*;
@@ -91,13 +86,8 @@ public class SnakeGame {
     }
 
     private void beginGame() {
-        GameState game = new GameState(new Vector2(7, 10));
-        gameManager = new GameManager(game, textRenderers);
-        //AudioManager.playGameStart();
-        //AudioManager.playMusic();
+        gameManager = new GameManager(textRenderers);
     }
-
-
 
     public static void main(String argv[]) {
         new SnakeGame();

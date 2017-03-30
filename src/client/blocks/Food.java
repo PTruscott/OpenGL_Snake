@@ -12,7 +12,7 @@ public class Food extends Block {
     public Food(int phase) {
         this.phase = phase;
         this.collidable = false;
-        this.colour = PHASE_COLOURS[phase];
+        this.colour = PHASE_COLOURS[phase].clone();
         growth = 1;
     }
 

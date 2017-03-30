@@ -29,12 +29,12 @@ public class GameManager {
     private boolean firstGame;
 
 
-    public GameManager(GameState game, TextRenderer[] textRenderers) {
+    public GameManager(TextRenderer[] textRenderers) {
         super();
-        this.game = game;
+        firstGame = true;
+        resetGame();
         gameRenderer = new GameRenderer(game, textRenderers);
         lastFrame = getTime();
-        firstGame = true;
     }
 
     public void run() {
@@ -72,7 +72,7 @@ public class GameManager {
             }
         }
         if (length < game.getSnakeLength()) {
-            snake.getColour().intensity = (game.getSnakeLength() - (float)length) / game.getSnakeLength();
+            snake.getColour().intensity = ((game.getSnakeLength() - (float)length) / game.getSnakeLength())*(1-MIN_SNAKE_GLOW) + MIN_SNAKE_GLOW;
         }
     }
 
@@ -103,7 +103,7 @@ public class GameManager {
             if (validPos(newPos)) {
                 if (game.getBlock(newPos) instanceof Food) {
                     game.growSnake(((Food) game.getBlock(newPos)).getGrowth());
-                    game.setBlock(new Food(0), respawnPos());
+                    game.setBlock(new Food(game.getPhase()), respawnPos());
                 }
                 game.setBlock(new Snake(true, pos), newPos);
                 game.setBlock(new Snake(false, ((Snake) game.getBlock(game.getHeadPos())).getTail()), pos);
@@ -162,7 +162,9 @@ public class GameManager {
     private void menuKeyboard() {
         switch ((Keyboard.getEventKey())) {
             case Keyboard.KEY_SPACE:
+                firstGame = false;
                 resetGame();
+                break;
         }
     }
 
@@ -224,10 +226,14 @@ public class GameManager {
     private void resetGame() {
         counter = 0;
         game = new GameState(new Vector2(7, 10));
-        game.startGame();
-        gameRenderer.updateGameState(game);
-        firstGame = false;
-        dir = new Vector2(1, 0);
+        if (gameRenderer != null) {
+            gameRenderer.updateGameState(game);
+        }
+
+        if (!firstGame) {
+            game.startGame();
+            dir = new Vector2(1, 0);
+        }
     }
 
     public static void out(Object o) {

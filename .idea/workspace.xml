@@ -2,196 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a81a51-e509-45f8-b22b-57aa9f1d1148" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/EnclaveNames.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/LandscapersNames.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/about_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/about_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/back_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/back_button_half.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/background_sound.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/caution.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/Client$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/Client$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/Client$Mode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/ClientReceiver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/ClientSettings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/audio/Audio$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/audio/Audio.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/audio/AudioManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Draw.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/GameManager$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/GameManager$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/GameManager$Screen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/GameManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/GameRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/InGameMenuRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Layer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/MapRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Pulse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/SettingsRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/BackgroundTexture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/Bullet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/Button.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/ButtonTexture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/ISprite.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/InterfaceTexture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/OrbTexture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/PlayerTexture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/Sprite.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Sprites/WallTexture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/StartScreenRenderer$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/StartScreenRenderer$Screen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/StartScreenRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/TextRenderer$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/TextRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/Texture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/client/graphics/TextureLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/controls_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/controls_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/end_game_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/exit_game_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/game_music.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/game_over.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/game_start.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/health_up.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/in_game_menu_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/loading_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/lobby_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/Connection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/Connection_Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/Connection_Server.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/NetworkEventHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/NetworkListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/NetworkListener_Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/NetworkListener_Server.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/NetworkSender.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/NewConnectionListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/networking/ReferenceBool.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/FireObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/GameData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/GameOver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/InitGame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/InitPlayer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/LobbyData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/MoveObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/PhaseObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/Sendable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/String.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/objects/SwitchObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/orb proximity.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/phase.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/resume_game_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/Lobby$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/Lobby.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/LobbyManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/Server.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/AIBrain.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/Intel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/OrbTask.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/PlayerTask.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/Task$runState.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/Task.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Attack.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/BehaviourSet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Dawdle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Fetch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/FindPath.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Fire.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Float.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/ForceShiftPhase.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/LocateCover.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/QuickMove.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Sequence.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/ShiftPhase.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Strategise$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Strategise$Strategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Strategise.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Swat.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Travel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Wander.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/behaviour/Zap.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/AIConstants.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/Check$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/Check$CheckMode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/Check.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/Feel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/LoadoutHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/OrbBrain.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/OrbIntel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/PlayerBrain$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/PlayerBrain$EmotionalState.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/PlayerBrain.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/PlayerIntel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/decision/Visualiser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/pathfinding/AStar$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/pathfinding/AStar.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/pathfinding/Edge.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/ai/pathfinding/Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/AIPlayer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/CollisionManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/DistDropOffProjectile.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Entity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Game$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Game.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Map.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/MovableEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Orb.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/PowerUp$Type.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/PowerUp.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Projectile.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Scoreboard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/ServerConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/SpawnPosition.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Vector2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Wall.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/Weapon.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/WeaponSMG.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/WeaponShotgun.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/WeaponSniper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/maps/map1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/maps/map10.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/maps/map2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/server/game/maps/map3.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/settings_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/settings_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/shotgun.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/slider.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/smg.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/sniper.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/solo_game_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/splash_screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/title.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/versus_game_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/g2/warning.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/TextureLoaderTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/objects/PhaseObjectTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/objects/StringTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/objects/SwitchObjectTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/LobbyManagerTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/LobbyTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/LobbyTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/ServerTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/CollisionManagerTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/EntityTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/GameTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/PlayerTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/PowerUpTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/ProjectileTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/ScoreboardTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/SpawnPositionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/Vector2Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/g2/server/game/WeaponTest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/ClientSettings.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/ClientSettings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/SnakeGame.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/SnakeGame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Food.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Food.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Wall.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Wall.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Colour.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Colour.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Draw.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Draw.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameManager.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameRenderer.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameRenderer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ClientSettings.java" afterPath="$PROJECT_DIR$/src/client/ClientSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/GameState.java" afterPath="$PROJECT_DIR$/src/client/GameState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/SnakeGame.java" afterPath="$PROJECT_DIR$/src/client/SnakeGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/blocks/Food.java" afterPath="$PROJECT_DIR$/src/client/blocks/Food.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/blocks/Wall.java" afterPath="$PROJECT_DIR$/src/client/blocks/Wall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/Colour.java" afterPath="$PROJECT_DIR$/src/client/graphics/Colour.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/Draw.java" afterPath="$PROJECT_DIR$/src/client/graphics/Draw.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameManager.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" />
@@ -210,35 +34,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="224" column="20" lean-forward="false" selection-start-line="224" selection-start-column="20" selection-end-line="224" selection-end-column="20" />
+            <state relative-caret-position="-235">
+              <caret line="105" column="58" lean-forward="false" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/GameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#993#994#0" expanded="true" />
-                <element signature="e#1039#1040#0" expanded="true" />
-                <element signature="e#1072#1073#0" expanded="true" />
-                <element signature="e#1119#1120#0" expanded="true" />
-                <element signature="e#1153#1154#0" expanded="true" />
-                <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1216#1217#0" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
-                <element signature="e#1282#1283#0" expanded="true" />
-                <element signature="e#1316#1317#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -247,22 +49,11 @@
       <file leaf-file-name="SnakeGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/SnakeGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="93" column="57" lean-forward="false" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="57" />
+            <state relative-caret-position="144">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vector2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/Vector2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="125" column="37" lean-forward="true" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2921#2922#0" expanded="true" />
+                <element signature="e#2981#2982#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -273,11 +64,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
               <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Food.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/blocks/Food.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
               <folding>
-                <element signature="e#276#277#0" expanded="false" />
-                <element signature="e#309#310#0" expanded="false" />
-                <element signature="e#342#343#0" expanded="false" />
-                <element signature="e#371#372#0" expanded="false" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -286,22 +85,37 @@
       <file leaf-file-name="Wall.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/blocks/Wall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Draw.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Draw.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/graphics/Draw.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="356" column="4" lean-forward="false" selection-start-line="356" selection-start-column="4" selection-end-line="356" selection-end-column="4" />
+            <state relative-caret-position="329">
+              <caret line="171" column="52" lean-forward="true" selection-start-line="171" selection-start-column="52" selection-end-line="171" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12745#12746#0" expanded="true" />
-                <element signature="e#12793#12794#0" expanded="true" />
+                <element signature="e#12667#12668#0" expanded="true" />
+                <element signature="e#12715#12716#0" expanded="true" />
+                <element signature="e#15634#15635#0" expanded="true" />
+                <element signature="e#15693#15694#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Colour.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/graphics/Colour.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+              <folding>
+                <element signature="e#701#702#0" expanded="true" />
+                <element signature="e#740#741#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -310,8 +124,8 @@
       <file leaf-file-name="GameRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/graphics/GameRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="423">
+              <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#752#753#0" expanded="true" />
@@ -324,8 +138,8 @@
       <file leaf-file-name="ClientSettings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ClientSettings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+            <state relative-caret-position="405">
+              <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -334,13 +148,10 @@
       <file leaf-file-name="Snake.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/blocks/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="198">
               <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding>
-                <element signature="e#496#497#0" expanded="false" />
-                <element signature="e#523#524#0" expanded="false" />
-                <element signature="e#564#565#0" expanded="false" />
-                <element signature="e#596#597#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -361,6 +172,12 @@
       <find>colour</find>
       <find>col</find>
       <find>Shou</find>
+      <find>val</find>
+      <find>draw</find>
+      <find>colourBack</find>
+      <find>Colour</find>
+      <find>0.2f</find>
+      <find>Food</find>
       <find>out</find>
     </findStrings>
     <replaceStrings>
@@ -388,20 +205,20 @@
         <option value="$PROJECT_DIR$/src/client/graphics/SettingsRenderer.java" />
         <option value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-        <option value="$PROJECT_DIR$/src/client/graphics/Colour.java" />
-        <option value="$PROJECT_DIR$/src/client/blocks/Wall.java" />
         <option value="$PROJECT_DIR$/src/client/audio/AudioManager.java" />
         <option value="$PROJECT_DIR$/src/client/blocks/SnakeHead.java" />
         <option value="$PROJECT_DIR$/src/client/Vector2.java" />
-        <option value="$PROJECT_DIR$/src/client/ClientSettings.java" />
         <option value="$PROJECT_DIR$/src/client/blocks/Snake.java" />
-        <option value="$PROJECT_DIR$/src/client/blocks/Food.java" />
         <option value="$PROJECT_DIR$/src/client/blocks/Block.java" />
-        <option value="$PROJECT_DIR$/src/client/graphics/Draw.java" />
-        <option value="$PROJECT_DIR$/src/client/SnakeGame.java" />
         <option value="$PROJECT_DIR$/src/client/GameState.java" />
-        <option value="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" />
+        <option value="$PROJECT_DIR$/src/client/SnakeGame.java" />
+        <option value="$PROJECT_DIR$/src/client/ClientSettings.java" />
         <option value="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" />
+        <option value="$PROJECT_DIR$/src/client/graphics/Colour.java" />
+        <option value="$PROJECT_DIR$/src/client/blocks/Food.java" />
+        <option value="$PROJECT_DIR$/src/client/blocks/Wall.java" />
+        <option value="$PROJECT_DIR$/src/client/graphics/Draw.java" />
       </list>
     </option>
   </component>
@@ -1026,12 +843,12 @@
       <workItem from="1490550513409" duration="1514000" />
       <workItem from="1490566135480" duration="344000" />
       <workItem from="1490608301760" duration="69000" />
-      <workItem from="1490835183772" duration="3032000" />
+      <workItem from="1490835183772" duration="4595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22275000" />
+    <option name="totallyTimeSpent" value="23838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1053" extended-state="6" />
@@ -1054,6 +871,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11770833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1066,7 +884,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1091,10 +908,7 @@
         <state relative-caret-position="180">
           <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
-            <element signature="e#496#497#0" expanded="false" />
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1134,7 +948,8 @@
         <state relative-caret-position="1584">
           <caret line="101" column="37" lean-forward="false" selection-start-line="101" selection-start-column="37" selection-end-line="101" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2921#2922#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1161,12 +976,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#276#277#0" expanded="false" />
-            <element signature="e#309#310#0" expanded="false" />
-            <element signature="e#342#343#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,8 +994,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#12745#12746#0" expanded="true" />
-            <element signature="e#12793#12794#0" expanded="true" />
+            <element signature="e#12667#12668#0" expanded="true" />
+            <element signature="e#12715#12716#0" expanded="true" />
+            <element signature="e#15634#15635#0" expanded="true" />
+            <element signature="e#15693#15694#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1207,10 +1019,7 @@
         <state relative-caret-position="180">
           <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
-            <element signature="e#496#497#0" expanded="false" />
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1259,17 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/graphics/Colour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#277#278#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/jar/lwjgl/lwjgl.jar!/org/lwjgl/SysImplementation.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1284,40 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/blocks/Food.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/blocks/Snake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="e#496#497#0" expanded="false" />
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/blocks/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#276#277#0" expanded="false" />
-            <element signature="e#309#310#0" expanded="false" />
-            <element signature="e#342#343#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Vector2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1328,59 +1092,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/blocks/Wall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/graphics/Draw.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="356" column="4" lean-forward="false" selection-start-line="356" selection-start-column="4" selection-end-line="356" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12745#12746#0" expanded="true" />
-            <element signature="e#12793#12794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ClientSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/SnakeGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="93" column="57" lean-forward="false" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#752#753#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="279">
           <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1398,12 +1112,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
+    <entry file="file://$PROJECT_DIR$/src/client/ClientSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="224" column="20" lean-forward="false" selection-start-line="224" selection-start-column="20" selection-end-line="224" selection-end-column="20" />
+        <state relative-caret-position="405">
+          <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/SnakeGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#2921#2922#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/blocks/Snake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235">
+          <caret line="105" column="58" lean-forward="false" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/graphics/Colour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding>
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/blocks/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/blocks/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding>
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/blocks/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/graphics/Draw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="171" column="52" lean-forward="true" selection-start-line="171" selection-start-column="52" selection-end-line="171" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12667#12668#0" expanded="true" />
+            <element signature="e#12715#12716#0" expanded="true" />
+            <element signature="e#15634#15635#0" expanded="true" />
+            <element signature="e#15693#15694#0" expanded="true" />
           </folding>
         </state>
       </provider>
