@@ -91,17 +91,7 @@ public class SnakeGame {
     }
 
     private void beginGame() {
-        Block[][] blocks = new Block[SCREEN_WIDTH/BLOCK_SIZE][SCREEN_HEIGHT/BLOCK_SIZE];
-        blocks[5][8] = new Wall(0);
-        blocks[5][9] = new Wall(0);
-        blocks[5][10] = new Wall(0);
-        blocks[5][11] = new Wall(0);
-
-        blocks[7][10] = new Snake(true, null);
-
-        blocks[10][17] = new Food(0);
-
-        GameState game = new GameState(blocks, 0, new Vector2(7, 10));
+        GameState game = new GameState(new Vector2(7, 10));
         gameManager = new GameManager(game, textRenderers);
         //AudioManager.playGameStart();
         //AudioManager.playMusic();

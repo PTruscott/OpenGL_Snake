@@ -4,7 +4,6 @@ import client.GameState;
 import client.Vector2;
 import client.blocks.Food;
 import client.blocks.Snake;
-import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
@@ -27,29 +26,35 @@ public class GameManager {
     private Vector2 dir;
     private GameState game;
     private float counter;
+    private boolean firstGame;
 
 
     public GameManager(GameState game, TextRenderer[] textRenderers) {
         super();
         this.game = game;
-        counter = 0;
-        dir = new Vector2(1, 0);
         gameRenderer = new GameRenderer(game, textRenderers);
         lastFrame = getTime();
+        firstGame = true;
     }
 
     public void run() {
         update();
-        gameRenderer.render();
+        if (game.isRunning()) {
+            gameRenderer.render();
+        }
+        else {
+            gameRenderer.drawMenu(!firstGame);
+        }
     }
 
     private void update() {
-        makeMovement();
         pollKeyboard();
-        updateSnake();
+        if (game.isRunning()) {
+            makeMovement();
+            updateSnake();
+        }
 
         //pollMouse();
-        //AudioManager.playWarningSounds(gameData.getPlayer(myPlayerID).getHealth());
         //updateFPS(); // update FPS Counter
     }
 
@@ -59,19 +64,16 @@ public class GameManager {
     }
 
     private void updateSnake(Snake snake, int length) {
-        if (snake != null) {
-            if (snake.getTail() != null) {
-                updateSnake((Snake) game.getBlock(snake.getTail()), length + 1);
-                if (length == game.getSnakeLength()) {
-                    game.clearBlock(snake.getTail());
-                    snake.setTail(null);
-                }
-            }
-            if (length < game.getSnakeLength()) {
-                snake.getColour().intensity = (game.getSnakeLength() - (float)length) / game.getSnakeLength();
+        if (snake.getTail() != null) {
+            updateSnake((Snake) game.getBlock(snake.getTail()), length + 1);
+            if (length == game.getSnakeLength()) {
+                game.clearBlock(snake.getTail());
+                snake.setTail(null);
             }
         }
-        else out("Why is this null??");
+        if (length < game.getSnakeLength()) {
+            snake.getColour().intensity = (game.getSnakeLength() - (float)length) / game.getSnakeLength();
+        }
     }
 
 
@@ -108,6 +110,8 @@ public class GameManager {
                 game.setHeadPos(newPos);
             }
 
+            else game.endGame();
+
             counter -= 100;
         }
     }
@@ -118,8 +122,8 @@ public class GameManager {
         int y=-1;
         boolean valid = false;
         while (!valid) {
-            x = r.nextInt(SCREEN_WIDTH/BLOCK_SIZE-1);
-            y = r.nextInt(SCREEN_HEIGHT/BLOCK_SIZE-1);
+            x = r.nextInt(game.getMapWidth()-1);
+            y = r.nextInt(game.getMapHeight()-1);
             valid = validPos(x, y);
         }
         return new Vector2(x, y);
@@ -130,9 +134,9 @@ public class GameManager {
     }
 
     private boolean validPos(Vector2 pos) {
-        if (pos.getX() > SCREEN_WIDTH / BLOCK_SIZE - 1) {
+        if (pos.getX() > game.getMapWidth() - 1) {
             return false;
-        } else if (pos.getY() > SCREEN_HEIGHT / BLOCK_SIZE - 1) {
+        } else if (pos.getY() > game.getMapHeight() - 1) {
             return false;
         } else if (pos.getX() < 0 || pos.getY() < 0) {
             return false;
@@ -145,7 +149,20 @@ public class GameManager {
     private void pollKeyboard() {
         while (Keyboard.next()) {
             // Runs if next key has been PRESSED.
-            gameKeyboard();
+            if (game.isRunning()) {
+                gameKeyboard();
+            }
+            //If it's game over
+            else {
+                menuKeyboard();
+            }
+        }
+    }
+
+    private void menuKeyboard() {
+        switch ((Keyboard.getEventKey())) {
+            case Keyboard.KEY_SPACE:
+                resetGame();
         }
     }
 
@@ -202,6 +219,15 @@ public class GameManager {
             lastFPS += 1000;
         }
         fps++;
+    }
+
+    private void resetGame() {
+        counter = 0;
+        game = new GameState(new Vector2(7, 10));
+        game.startGame();
+        gameRenderer.updateGameState(game);
+        firstGame = false;
+        dir = new Vector2(1, 0);
     }
 
     public static void out(Object o) {

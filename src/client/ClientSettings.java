@@ -19,7 +19,7 @@ public class ClientSettings {
     // ***** GAME SETTINGS *****
 
     public static final int BLOCK_SIZE = 20;
-    static final int STARTING_LENGTH = 10;
+    public static final int STARTING_LENGTH = 10;
     public static final float SNAKE_SPEED = 1;
 
     // ***** AUDIO SETTINGS *****

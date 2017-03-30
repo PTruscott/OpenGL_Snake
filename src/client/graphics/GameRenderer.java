@@ -3,20 +3,20 @@ import client.GameState;
 import client.blocks.Block;
 import org.lwjgl.opengl.GL11;
 
-import static client.ClientSettings.BLOCK_SIZE;
-import static client.ClientSettings.SCREEN_HEIGHT;
-import static client.ClientSettings.SCREEN_WIDTH;
+import static client.ClientSettings.*;
 
 class GameRenderer {
 
     private Draw draw;
     private GameState game;
+    private TextRenderer[] textRenderers;
 
     /**
      * Sets up a new game renderer to show the game on screen
      * @param textRenderers how to display text
      */
     GameRenderer(GameState game, TextRenderer[] textRenderers) {
+        this.textRenderers = textRenderers;
         draw = new Draw(textRenderers);
         this.game = game;
     }
@@ -25,9 +25,19 @@ class GameRenderer {
      * The main render method
      */
     void render() {
-        int phase = 1;
-        draw.colourBackground(phase);
+        draw.colourBackground(game.getPhase());
         drawMap();
+    }
+
+    void updateGameState(GameState gs) {
+        this.game = gs;
+    }
+
+    void drawMenu(boolean drawScore) {
+        Draw.drawText(textRenderers[1], "WELCOME TO SNAKE", SCREEN_WIDTH/2-200, SCREEN_HEIGHT/2, 1, 1, 1);
+        if (drawScore) {
+            Draw.drawText(textRenderers[0], "YOUR SCORE WAS "+(game.getSnakeLength()-STARTING_LENGTH), SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+100, 1, 1, 1);
+        }
     }
 
     private void drawMap() {

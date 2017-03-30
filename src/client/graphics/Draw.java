@@ -340,9 +340,9 @@ class Draw {
      * @param x left of the string
      * @param y the top of the string
      */
-    private static void drawText(TextRenderer tx, String s, float x, float y) {
-        drawText(tx, s, x, y, 0, 0, 0);
-    }
+     static void drawText(TextRenderer tx, String s, float x, float y) {
+         drawText(tx, s, x, y, 0, 0, 0);
+     }
 
     /**
      * draws text in given position
@@ -354,7 +354,7 @@ class Draw {
      * @param green the green component
      * @param blue the blue component
      */
-    private static void drawText(TextRenderer tx, String s, float x, float y, float red, float green, float blue) {
+    static void drawText(TextRenderer tx, String s, float x, float y, float red, float green, float blue) {
         glEnable(GL_TEXTURE_2D);
         glColor4f(red,green,blue,1);
         tx.drawText(s, x, y);
