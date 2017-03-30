@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67a81a51-e509-45f8-b22b-57aa9f1d1148" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/ClientSettings.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/ClientSettings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/SnakeGame.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/SnakeGame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Food.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Food.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Wall.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/blocks/Wall.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Colour.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Colour.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Draw.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/Draw.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameManager.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameRenderer.class" afterPath="$PROJECT_DIR$/out/production/OpenGL_Snake/client/graphics/GameRenderer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ClientSettings.java" afterPath="$PROJECT_DIR$/src/client/ClientSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/SnakeGame.java" afterPath="$PROJECT_DIR$/src/client/SnakeGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/blocks/Food.java" afterPath="$PROJECT_DIR$/src/client/blocks/Food.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/blocks/Wall.java" afterPath="$PROJECT_DIR$/src/client/blocks/Wall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/Colour.java" afterPath="$PROJECT_DIR$/src/client/graphics/Colour.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/Draw.java" afterPath="$PROJECT_DIR$/src/client/graphics/Draw.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameManager.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" />
-    </list>
+    <list default="true" id="67a81a51-e509-45f8-b22b-57aa9f1d1148" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -843,12 +825,12 @@
       <workItem from="1490550513409" duration="1514000" />
       <workItem from="1490566135480" duration="344000" />
       <workItem from="1490608301760" duration="69000" />
-      <workItem from="1490835183772" duration="4595000" />
+      <workItem from="1490835183772" duration="4840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23838000" />
+    <option name="totallyTimeSpent" value="24083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1053" extended-state="6" />
