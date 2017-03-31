@@ -9,6 +9,7 @@ import client.blocks.SnakeBlock;
 import static client.ClientSettings.*;
 import static org.lwjgl.opengl.GL11.*;
 
+
 /**
  * Created by peran on 3/5/17.
  *  used for draw methods
@@ -17,24 +18,24 @@ class Draw {
 
     private static void drawRect(float x, float y, float rotation, float width, float height, Colour colour) {
         setColour(colour);
+
         glPushMatrix();
 
-        float cx = x+width/2;
-        float cy = SCREEN_HEIGHT-(y+height/2);
-        glTranslatef(cx, cy, 0);
-        glRotatef(rotation, 0f, 0f, 1f);
-        glTranslatef(-cx, -cy, 0);
-        glBegin(GL_QUADS);
-        glVertex2f(x, SCREEN_HEIGHT-y);
-        glVertex2f(x+width, SCREEN_HEIGHT-y);
-        glVertex2f(x+width, SCREEN_HEIGHT-(y+height));
-        glVertex2f(x, SCREEN_HEIGHT-(y+height));
+            float cx = x+width/2;
+            float cy = SCREEN_HEIGHT-(y+height/2);
+            glTranslatef(cx, cy, 0);
+            glRotatef(rotation, 0f, 0f, 1f);
+            glTranslatef(-cx, -cy, 0);
 
-        glEnd();
+                glBegin(GL_QUADS);
+                glVertex2f(x, SCREEN_HEIGHT-y);
+                glVertex2f(x+width, SCREEN_HEIGHT-y);
+                glVertex2f(x+width, SCREEN_HEIGHT-(y+height));
+                glVertex2f(x, SCREEN_HEIGHT-(y+height));
+
+            glEnd();
 
         glPopMatrix();
-
-        drawRectGlow(x, y, rotation, width, height, colour, 5);
     }
 
     private static void drawRectGlow(float x, float y, float rotation, float width, float height, Colour colour, float strokeWidth) {
@@ -83,56 +84,48 @@ class Draw {
      * @param centre the centre of the glow
      * @param radius the radius from the centre
      * @param strokeWidth how think the line is
-     * @param red the red component
-     * @param green the green component
-     * @param blue the blue component
+     * @param colour the colour of the aura
      */
-    static void drawAura(Vector2 centre, float radius, float strokeWidth, float red, float green, float blue) {
-        drawAura(centre, radius, strokeWidth, red, green, blue, 1);
-    }
+    private static void drawAura(Vector2 centre, float radius, float strokeWidth, Colour colour) {
+        setColour(colour);
+        Colour faded = colour.clone();
+        faded.intensity = 0;
 
-    /**
-     * draws glow round circles
-     * @param centre the centre of the glow
-     * @param radius the radius from the centre
-     * @param strokeWidth how think the line is
-     * @param red the red component
-     * @param green the green component
-     * @param blue the blue component
-     * @param intensity the brightness of the glow
-     */
-    static void drawAura(Vector2 centre, float radius, float strokeWidth, float red, float green, float blue, float intensity) {
-        glColor4f(red, green, blue, intensity);
         glBegin(GL_QUAD_STRIP);
-        float cx = centre.getX();
-        float cy = SCREEN_HEIGHT-centre.getY();
-        glVertex2f(cx, cy+(radius-strokeWidth));
-        glColor4f(red, green, blue, intensity);
-        glVertex2f(cx, cy+radius);
-        for (int i = 1; i < 360; i++) {
-            glColor4f(red, green, blue, 0);
-            glVertex2d(cx+((radius-strokeWidth)*Math.sin(Math.toRadians(i))), cy+((radius-strokeWidth)*Math.cos(Math.toRadians(i))));
-            glColor4f(red, green, blue, intensity);
-            glVertex2d(cx+((radius)*Math.sin(Math.toRadians(i))), cy+((radius)*Math.cos(Math.toRadians(i))));
-        }
-        glColor4f(red, green, blue, 0);
-        glVertex2f(cx, cy+(radius-strokeWidth));
-        glColor4f(red, green, blue, intensity);
-        glVertex2f(cx, cy+radius);
+
+            float cx = centre.getX();
+            float cy = SCREEN_HEIGHT-centre.getY();
+            glVertex2f(cx, cy+(radius-strokeWidth));
+            setColour(faded);
+            glVertex2f(cx, cy+radius);
+
+            for (int i = 1; i < 360; i++) {
+                setColour(faded);
+                glVertex2d(cx+((radius-strokeWidth)*Math.sin(Math.toRadians(i))), cy+((radius-strokeWidth)*Math.cos(Math.toRadians(i))));
+                setColour(colour);
+                glVertex2d(cx+((radius)*Math.sin(Math.toRadians(i))), cy+((radius)*Math.cos(Math.toRadians(i))));
+            }
+            setColour(faded);
+            glVertex2f(cx, cy+(radius-strokeWidth));
+            setColour(colour);
+            glVertex2f(cx, cy+radius);
+
         glEnd();
     }
 
     static void drawBlock(int x, int y, Block b, int phase) {
         Colour colour = b.getColour();
         if (b instanceof Food) {
-            drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/5, colour.red, colour.green, colour.blue);
+            drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/5, colour);
         }
         else {
             if (b instanceof Portal) {
                 Colour other = ((Portal) b).getOtherColour(phase);
                 colour = ((Portal) b).getColour(phase);
 
-                drawRect(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, other);
+                drawRect(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other);
+                drawRectGlow(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other, BLOCK_SIZE/6);
+
             }
 
             invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
@@ -145,7 +138,8 @@ class Draw {
         Colour colour = s.getColour();
 
         if (s.isHead()) {
-            drawRect(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, colour);
+            drawCircle(x*BLOCK_SIZE+BLOCK_SIZE/2, y*BLOCK_SIZE+BLOCK_SIZE/2, BLOCK_SIZE/4, colour);
+            drawAura(new Vector2(x*BLOCK_SIZE+BLOCK_SIZE/2, y*BLOCK_SIZE+BLOCK_SIZE/2), BLOCK_SIZE/4, BLOCK_SIZE/6, colour);
         }
         invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
     }
@@ -166,39 +160,30 @@ class Draw {
         yStart = SCREEN_HEIGHT-yStart-rectHeight;
 
         glBegin(GL_QUAD_STRIP);
-        glColor4f(red, green, blue, intensity);
-        glVertex2f(xStart,yStart);
-        glColor4f(red, green, blue, 0);
-        glVertex2f(xStart+strokeWidth, yStart+strokeWidth);
-        glColor4f(red, green, blue, intensity);
-        glVertex2f(xStart+rectWidth,yStart);
-        glColor4f(red, green, blue, 0);
-        glVertex2f(xStart+rectWidth-strokeWidth, yStart+strokeWidth);
-        glColor4f(red, green, blue, intensity);
-        glVertex2f(xStart+rectWidth, yStart+rectHeight);
-        glColor4f(red, green, blue, 0);
-        glVertex2f(xStart+rectWidth-strokeWidth, yStart+rectHeight-strokeWidth);
-        glColor4f(red, green, blue, intensity);
-        glVertex2f(xStart,yStart+rectHeight);
-        glColor4f(red, green, blue, 0);
-        glVertex2f(xStart+strokeWidth, yStart+rectHeight-strokeWidth);
-        glColor4f(red, green, blue, intensity);
-        glVertex2f(xStart,yStart);
-        glColor4f(red, green, blue, 0);
-        glVertex2f(xStart+strokeWidth, yStart+strokeWidth);
+
+            glColor4f(red, green, blue, intensity);
+            glVertex2f(xStart,yStart);
+            glColor4f(red, green, blue, 0);
+            glVertex2f(xStart+strokeWidth, yStart+strokeWidth);
+            glColor4f(red, green, blue, intensity);
+            glVertex2f(xStart+rectWidth,yStart);
+            glColor4f(red, green, blue, 0);
+            glVertex2f(xStart+rectWidth-strokeWidth, yStart+strokeWidth);
+            glColor4f(red, green, blue, intensity);
+            glVertex2f(xStart+rectWidth, yStart+rectHeight);
+            glColor4f(red, green, blue, 0);
+            glVertex2f(xStart+rectWidth-strokeWidth, yStart+rectHeight-strokeWidth);
+            glColor4f(red, green, blue, intensity);
+            glVertex2f(xStart,yStart+rectHeight);
+            glColor4f(red, green, blue, 0);
+            glVertex2f(xStart+strokeWidth, yStart+rectHeight-strokeWidth);
+            glColor4f(red, green, blue, intensity);
+            glVertex2f(xStart,yStart);
+            glColor4f(red, green, blue, 0);
+            glVertex2f(xStart+strokeWidth, yStart+strokeWidth);
+
         glEnd();
     }
-
-    /**
-     * draws text in given position
-     * @param tx the text renderer
-     * @param s the string to draw
-     * @param x left of the string
-     * @param y the top of the string
-     */
-     static void drawText(TextRenderer tx, String s, float x, float y) {
-         drawText(tx, s, x, y, 0, 0, 0);
-     }
 
     /**
      * draws text in given position
@@ -232,9 +217,13 @@ class Draw {
      * @param cx centre of the circle
      * @param cy the centre of the circle (from the bottom)
      * @param r the radius of the circle
-     * @param num_segments the number of segments, the more the smoother it looks
      */
-    static void drawCircle(float cx, float cy, float r, int num_segments) {
+    private static void drawCircle(float cx, float cy, float r, Colour colour) {
+        float num_segments = r*2;
+        setColour(colour);
+
+        cy = SCREEN_HEIGHT-cy;
+
         float theta = (float) (2 * 3.1415926 / (num_segments));
         float tangetial_factor = (float) Math.tan(theta);//calculate the tangential factor
         float radial_factor = (float) Math.cos(theta);//calculate the radial factor
@@ -243,7 +232,6 @@ class Draw {
         float y = 0;
 
         glBegin(GL_TRIANGLE_FAN);
-
         for (int i = 0; i < num_segments; i++) {
             glVertex2f(x + cx, y + cy);//output vertex
 

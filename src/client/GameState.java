@@ -37,6 +37,8 @@ public class GameState {
         if (otherPhase == phase) otherPhase = 3;
 
         blocks[phase][10][20] = new Portal(phase, otherPhase);
+        blocks[otherPhase][10][20] = new Portal(otherPhase, phase);
+
 
         blocks[phase][10][17] = new Food(phase);
 
