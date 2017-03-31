@@ -7,10 +7,10 @@ import org.lwjgl.opengl.GL11;
 import java.util.LinkedList;
 
 import static client.ClientSettings.*;
+import static client.graphics.Draw.*;
 
 class GameRenderer {
 
-    private Draw draw;
     private GameState game;
     private TextRenderer[] textRenderers;
     private LinkedList<SnakeBlock> snake;
@@ -21,7 +21,6 @@ class GameRenderer {
      */
     GameRenderer(GameState game, TextRenderer[] textRenderers, LinkedList<SnakeBlock> snake) {
         this.textRenderers = textRenderers;
-        draw = new Draw(textRenderers);
         this.game = game;
         this.snake = snake;
     }
@@ -30,7 +29,7 @@ class GameRenderer {
      * The main render method
      */
     void render() {
-        draw.colourBackground(game.getPhase());
+        colourBackground(game.getPhase());
         drawMap();
     }
 
@@ -39,9 +38,9 @@ class GameRenderer {
     }
 
     void drawMenu(boolean drawScore) {
-        Draw.drawText(textRenderers[1], "WELCOME TO SNAKE", SCREEN_WIDTH/2-200, SCREEN_HEIGHT/2, 1, 1, 1);
+        drawText(textRenderers[1], "WELCOME TO SNAKE", SCREEN_WIDTH/2-200, SCREEN_HEIGHT/2, 1, 1, 1);
         if (drawScore) {
-            Draw.drawText(textRenderers[0], "YOUR SCORE WAS "+(game.getSnakeLength()-STARTING_LENGTH), SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+100, 1, 1, 1);
+            drawText(textRenderers[0], "YOUR SCORE WAS "+(game.getSnakeLength()-STARTING_LENGTH), SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+100, 1, 1, 1);
         }
     }
 
@@ -50,13 +49,13 @@ class GameRenderer {
         for (int i = 0; i < game.getMapWidth(); i++) {
             for (int j = 0; j < game.getMapHeight(); j++) {
                 if (b[i][j] != null) {
-                    draw.drawBlock(i, j, b[i][j], game.getPhase());
+                    drawBlock(i, j, b[i][j], game.getPhase());
                 }
             }
         }
         for (SnakeBlock s: snake) {
             if (s.getPhase() == game.getPhase()) {
-                draw.drawSnake(s);
+                drawSnake(s);
             }
         }
     }
@@ -69,7 +68,7 @@ class GameRenderer {
         if (newPhase == 1) oldPhase = 0;
 
         //draws the old phase
-        draw.colourBackground(oldPhase);
+        colourBackground(oldPhase);
         drawMap();
 
         GL11.glEnable(GL11.GL_STENCIL_TEST);
@@ -101,7 +100,7 @@ class GameRenderer {
                 .getRadius(), 500); */
 
         //draws the new phase in the circle
-        draw.colourBackground(newPhase);
+        colourBackground(newPhase);
         drawMap();
 
         GL11.glDisable(GL11.GL_STENCIL_TEST);

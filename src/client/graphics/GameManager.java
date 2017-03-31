@@ -69,7 +69,7 @@ public class GameManager {
         }
 
         if (snake.size() > length) {
-            snake.subList(length-1, snake.size()-1).clear();
+            snake.subList(length, snake.size()).clear();
         }
 
     }
