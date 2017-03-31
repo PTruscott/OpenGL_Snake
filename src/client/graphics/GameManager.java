@@ -4,12 +4,11 @@ import client.GameState;
 import client.Vector2;
 import client.blocks.Food;
 import client.blocks.Portal;
-import client.blocks.Snake;
+import client.blocks.SnakeBlock;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
 
 import static client.ClientSettings.*;
@@ -29,7 +28,7 @@ public class GameManager {
     private GameState game;
     private float counter;
     private boolean firstGame;
-    private LinkedList<Snake> snake;
+    private LinkedList<SnakeBlock> snake;
 
 
     public GameManager(TextRenderer[] textRenderers) {
@@ -89,9 +88,10 @@ public class GameManager {
             if (validPos(newPos)) {
                 if (game.getBlock(newPos) instanceof Food) {
                     game.growSnake(((Food) game.getBlock(newPos)).getGrowth());
+                    game.clearBlock(newPos);
                     game.setBlock(new Food(game.getPhase()), respawnPos());
                 }
-                snake.add(0, new Snake(true, newPos, game.getPhase()));
+                snake.add(0, new SnakeBlock(true, newPos, game.getPhase()));
             }
             else game.endGame();
 
@@ -117,6 +117,9 @@ public class GameManager {
     }
 
     private boolean validPos(Vector2 pos) {
+        for (SnakeBlock s: snake) {
+            if (s.getPos().equals(pos)) return false;
+        }
         if (pos.getX() > game.getMapWidth() - 1) {
             return false;
         } else if (pos.getY() > game.getMapHeight() - 1) {
@@ -126,6 +129,7 @@ public class GameManager {
         } else if (game.getBlock(pos) == null) {
             return true;
         }
+
         return !game.getBlock(pos).isCollidable();
     }
 
@@ -208,7 +212,7 @@ public class GameManager {
             game.startGame();
             dir = new Vector2(1, 0);
         }
-        snake.add(0, new Snake(true, new Vector2(10, 10), game.getPhase()));
+        snake.add(0, new SnakeBlock(true, new Vector2(10, 10), game.getPhase()));
         getDelta();
     }
 

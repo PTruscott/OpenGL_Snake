@@ -11,7 +11,7 @@ public class ClientSettings {
 
     // ***** DISPLAY SETTINGS *****
 
-    static final String WINDOW_TITLE = "Snake";
+    static final String WINDOW_TITLE = "SnakeBlock";
     public static final int SCREEN_WIDTH = 800;
     public static final int SCREEN_HEIGHT = 600;
     static final boolean FULLSCREEN = false;

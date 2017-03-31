@@ -1,7 +1,7 @@
 package client.graphics;
 import client.GameState;
 import client.blocks.Block;
-import client.blocks.Snake;
+import client.blocks.SnakeBlock;
 import org.lwjgl.opengl.GL11;
 
 import java.util.LinkedList;
@@ -13,13 +13,13 @@ class GameRenderer {
     private Draw draw;
     private GameState game;
     private TextRenderer[] textRenderers;
-    private LinkedList<Snake> snake;
+    private LinkedList<SnakeBlock> snake;
 
     /**
      * Sets up a new game renderer to show the game on screen
      * @param textRenderers how to display text
      */
-    GameRenderer(GameState game, TextRenderer[] textRenderers, LinkedList<Snake> snake) {
+    GameRenderer(GameState game, TextRenderer[] textRenderers, LinkedList<SnakeBlock> snake) {
         this.textRenderers = textRenderers;
         draw = new Draw(textRenderers);
         this.game = game;
@@ -54,7 +54,7 @@ class GameRenderer {
                 }
             }
         }
-        for (Snake s: snake) {
+        for (SnakeBlock s: snake) {
             if (s.getPhase() == game.getPhase()) {
                 draw.drawSnake(s);
             }

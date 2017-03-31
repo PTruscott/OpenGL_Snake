@@ -5,12 +5,9 @@ import client.Vector2;
 import client.blocks.Block;
 import client.blocks.Food;
 import client.blocks.Portal;
-import client.blocks.Snake;
-
-import java.util.LinkedList;
+import client.blocks.SnakeBlock;
 
 import static client.ClientSettings.*;
-import static client.graphics.GameManager.out;
 import static org.lwjgl.opengl.GL11.*;
 
 /**
@@ -132,7 +129,7 @@ class Draw {
         }
     }
 
-    void drawSnake(Snake s) {
+    void drawSnake(SnakeBlock s) {
         int x = (int)s.getPos().getX();
         int y = (int)s.getPos().getY();
         Colour colour = s.getColour();
