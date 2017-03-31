@@ -51,7 +51,7 @@ class GameRenderer {
             for (int j = 0; j < game.getMapHeight(); j++) {
                 if (b[i][j] != null) {
                     if (b[i][j] instanceof Portal) {
-                        drawPortal(i,j,(Portal) b[i][j]);
+                        drawPortal(i,j,(Portal) b[i][j], game.getPortalRotation());
                     }
                     else {
                         drawBlock(i, j, b[i][j]);

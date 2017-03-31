@@ -30,6 +30,7 @@ public class ClientSettings {
       new Colour(1, 1, 0)  //phase 3
     };
     public static float MIN_SNAKE_GLOW = 0.2f;
+    static float PORTAL_SPEED = 6;
 
 
 

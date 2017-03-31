@@ -123,12 +123,12 @@ class Draw {
         }
     }
 
-    static void drawPortal(int x, int y, Portal b) {
+    static void drawPortal(int x, int y, Portal b, float rotation) {
         Colour other = b.getOtherColour();
         Colour colour = b.getColour();
 
-        drawRect(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other);
-        drawRectGlow(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other, BLOCK_SIZE/6);
+        drawRect(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, rotation, BLOCK_SIZE/2, BLOCK_SIZE/2, other);
+        drawRectGlow(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, rotation, BLOCK_SIZE/2, BLOCK_SIZE/2, other, BLOCK_SIZE/6);
         invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
     }
 

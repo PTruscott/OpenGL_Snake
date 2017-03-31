@@ -75,7 +75,9 @@ public class GameManager {
     }
 
     private void makeMovement() {
-        counter += SNAKE_SPEED*getDelta();
+        float delta = getDelta();
+        counter += SNAKE_SPEED*delta;
+        game.rotatePortal(delta);
         if (counter > 100) {
             Vector2 pos = snake.get(0).getPos();
 
@@ -118,7 +120,7 @@ public class GameManager {
 
     private boolean validPos(Vector2 pos) {
         for (SnakeBlock s: snake) {
-            if (s.getPos().equals(pos)) return false;
+            if (s.getPos().equals(pos) && s.getPhase() == game.getPhase()) return false;
         }
         if (pos.getX() > game.getMapWidth() - 1) {
             return false;

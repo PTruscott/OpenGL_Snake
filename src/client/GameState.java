@@ -104,9 +104,9 @@ public class GameState {
         snakeLength+=growth;
     }
 
-    public void rotatePortal() {
+    public void rotatePortal(float delta) {
         portalRotation %= 360;
-        portalRotation += 10;
+        portalRotation += PORTAL_SPEED*delta;
     }
 
     public int getPortalRotation() {
