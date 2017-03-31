@@ -82,7 +82,7 @@ public class GameManager {
             Vector2 newPos = pos.add(dir);
 
             if (game.getBlock(newPos) instanceof Portal) {
-                game.setPhase(((Portal) game.getBlock(newPos)).getOtherPhase(game.getPhase()));
+                game.setPhase(((Portal) game.getBlock(newPos)).getOtherPhase());
             }
 
             if (validPos(newPos)) {

@@ -15,12 +15,15 @@ public class GameState {
     private int phase;
     private int snakeLength;
     private boolean gameRunning;
+    private int portalRotation;
 
     public GameState() {
         snakeLength = STARTING_LENGTH;
         gameRunning = false;
         Random rand = new Random();
         phase = rand.nextInt(4);
+        portalRotation = 0;
+
 
         blocks = new Block[4][getMapWidth()][getMapHeight()];
         for (int i = 0; i < 4; i++) {
@@ -101,4 +104,12 @@ public class GameState {
         snakeLength+=growth;
     }
 
+    public void rotatePortal() {
+        portalRotation %= 360;
+        portalRotation += 10;
+    }
+
+    public int getPortalRotation() {
+        return portalRotation;
+    }
 }

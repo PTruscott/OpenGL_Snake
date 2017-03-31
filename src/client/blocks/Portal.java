@@ -21,18 +21,11 @@ public class Portal extends Block{
         this.phase = phase;
     }
 
-    public int getOtherPhase(int phase) {
-        if (this.phase == phase) return otherPhase;
-        return phase;
+    public int getOtherPhase() {
+        return otherPhase;
     }
 
-    public Colour getOtherColour(int phase) {
-        if (this.phase == phase) return otherColour;
-        return colour;
-    }
-
-    public Colour getColour(int phase) {
-        if (this.phase == phase) return colour;
+    public Colour getOtherColour() {
         return otherColour;
     }
 }

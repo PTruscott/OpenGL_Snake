@@ -113,23 +113,23 @@ class Draw {
         glEnd();
     }
 
-    static void drawBlock(int x, int y, Block b, int phase) {
+    static void drawBlock(int x, int y, Block b) {
         Colour colour = b.getColour();
         if (b instanceof Food) {
             drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/5, colour);
         }
         else {
-            if (b instanceof Portal) {
-                Colour other = ((Portal) b).getOtherColour(phase);
-                colour = ((Portal) b).getColour(phase);
-
-                drawRect(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other);
-                drawRectGlow(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other, BLOCK_SIZE/6);
-
-            }
-
             invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
         }
+    }
+
+    static void drawPortal(int x, int y, Portal b) {
+        Colour other = b.getOtherColour();
+        Colour colour = b.getColour();
+
+        drawRect(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other);
+        drawRectGlow(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, 45, BLOCK_SIZE/2, BLOCK_SIZE/2, other, BLOCK_SIZE/6);
+        invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
     }
 
     static void drawSnake(SnakeBlock s) {

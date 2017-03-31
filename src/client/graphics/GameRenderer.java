@@ -1,6 +1,7 @@
 package client.graphics;
 import client.GameState;
 import client.blocks.Block;
+import client.blocks.Portal;
 import client.blocks.SnakeBlock;
 import org.lwjgl.opengl.GL11;
 
@@ -49,7 +50,12 @@ class GameRenderer {
         for (int i = 0; i < game.getMapWidth(); i++) {
             for (int j = 0; j < game.getMapHeight(); j++) {
                 if (b[i][j] != null) {
-                    drawBlock(i, j, b[i][j], game.getPhase());
+                    if (b[i][j] instanceof Portal) {
+                        drawPortal(i,j,(Portal) b[i][j]);
+                    }
+                    else {
+                        drawBlock(i, j, b[i][j]);
+                    }
                 }
             }
         }
