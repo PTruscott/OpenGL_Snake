@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a81a51-e509-45f8-b22b-57aa9f1d1148" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ClientSettings.java" afterPath="$PROJECT_DIR$/src/client/ClientSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/GameState.java" afterPath="$PROJECT_DIR$/src/client/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/Draw.java" afterPath="$PROJECT_DIR$/src/client/graphics/Draw.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameManager.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +46,8 @@
       <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="122" column="73" lean-forward="false" selection-start-line="122" selection-start-column="73" selection-end-line="122" selection-end-column="73" />
+            <state relative-caret-position="207">
+              <caret line="166" column="22" lean-forward="true" selection-start-line="166" selection-start-column="22" selection-end-line="166" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -822,12 +818,12 @@
       <workItem from="1490608301760" duration="69000" />
       <workItem from="1490835183772" duration="5551000" />
       <workItem from="1490840805331" duration="15636000" />
-      <workItem from="1490994202904" duration="4237000" />
+      <workItem from="1490994202904" duration="4546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44667000" />
+    <option name="totallyTimeSpent" value="44976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1053" extended-state="6" />
@@ -1155,8 +1151,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="122" column="73" lean-forward="false" selection-start-line="122" selection-start-column="73" selection-end-line="122" selection-end-column="73" />
+        <state relative-caret-position="207">
+          <caret line="166" column="22" lean-forward="true" selection-start-line="166" selection-start-column="22" selection-end-line="166" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

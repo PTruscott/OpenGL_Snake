@@ -159,21 +159,25 @@ public class GameManager {
 
     private void gameKeyboard() {
         switch (Keyboard.getEventKey()) {
+            case Keyboard.KEY_UP:
             case Keyboard.KEY_W:
                 if (!dir.equals(0, 1)) {
                     dir = new Vector2(0, -1);
                 }
                 break;
+            case Keyboard.KEY_LEFT:
             case Keyboard.KEY_A:
                 if (!dir.equals(1, 0)) {
                     dir = new Vector2(-1, 0);
                 }
                 break;
+            case Keyboard.KEY_DOWN:
             case Keyboard.KEY_S:
                 if (!dir.equals(0, -1)) {
                     dir = new Vector2(0, 1);
                 }
                 break;
+            case Keyboard.KEY_RIGHT:
             case Keyboard.KEY_D:
                 if (!dir.equals(-1, 0)) {
                     dir = new Vector2(1, 0);
