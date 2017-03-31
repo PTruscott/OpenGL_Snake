@@ -5,6 +5,9 @@ import client.Vector2;
 import client.blocks.Block;
 import client.blocks.Food;
 import client.blocks.Portal;
+import client.blocks.Snake;
+
+import java.util.LinkedList;
 
 import static client.ClientSettings.*;
 import static client.graphics.GameManager.out;
@@ -112,18 +115,32 @@ class Draw {
         glEnd();
     }
 
-    void drawBlock(int x, int y, Block b) {
+    void drawBlock(int x, int y, Block b, int phase) {
         Colour colour = b.getColour();
         if (b instanceof Food) {
             drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/5, colour.red, colour.green, colour.blue);
         }
         else {
             if (b instanceof Portal) {
-                Colour other = ((Portal) b).getOtherColour();
+                Colour other = ((Portal) b).getOtherColour(phase);
+                colour = ((Portal) b).getColour(phase);
+
                 drawQuad(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, other);
             }
+
             invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
         }
+    }
+
+    void drawSnake(Snake s) {
+        int x = (int)s.getPos().getX();
+        int y = (int)s.getPos().getY();
+        Colour colour = s.getColour();
+
+        if (s.isHead()) {
+            drawQuad(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, colour);
+        }
+        invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
     }
 
     /**

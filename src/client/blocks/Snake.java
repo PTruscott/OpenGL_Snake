@@ -9,24 +9,30 @@ import client.graphics.Colour;
  */
 public class Snake extends Block{
     private boolean head;
-    private Vector2 tail;
+    private Vector2 pos;
+    private int phase;
 
-    public Snake(boolean head, Vector2 tail) {
+    public Snake(boolean head, Vector2 pos, int phase) {
         this.head = head;
+        this.phase = phase;
         this.colour = new Colour(1,1,1);
         this.collidable = true;
-        this.tail = tail;
+        this.pos = pos;
     }
 
     public boolean isHead() {
         return head;
     }
 
-    public Vector2 getTail() {
-        return tail;
+    public void demote() {
+        head = false;
     }
 
-    public void setTail(Vector2 tail) {
-        this.tail = tail;
+    public Vector2 getPos() {
+        return pos;
+    }
+
+    public int getPhase() {
+        return phase;
     }
 }

@@ -13,12 +13,10 @@ import static client.ClientSettings.*;
 public class GameState {
     private Block[][][] blocks;
     private int phase;
-    private Vector2 head;
     private int snakeLength;
     private boolean gameRunning;
 
     public GameState() {
-        head = new Vector2(7, 10);
         snakeLength = STARTING_LENGTH;
         gameRunning = false;
         Random rand = new Random();
@@ -39,8 +37,6 @@ public class GameState {
         if (otherPhase == phase) otherPhase = 3;
 
         blocks[phase][10][20] = new Portal(phase, otherPhase);
-
-        blocks[phase][7][10] = new Snake(true, null);
 
         blocks[phase][10][17] = new Food(phase);
 
@@ -75,7 +71,12 @@ public class GameState {
     }
 
     public void setBlock(Block b, Vector2 pos) {
+        setBlock(phase, b, pos);
+    }
+
+    public void setBlock(int phase, Block b, Vector2 pos) {
         blocks[phase][(int)pos.getX()][(int)pos.getY()] = b;
+
     }
 
     public void clearBlock(Vector2 pos) {
@@ -90,18 +91,6 @@ public class GameState {
         this.phase = phase;
     }
 
-    public Vector2 getHeadPos() {
-        return head;
-    }
-
-    public Block getHead() {
-        return getBlock(head);
-    }
-
-    public void setHeadPos(Vector2 head) {
-        this.head = head;
-    }
-
     public int getSnakeLength() {
         return snakeLength;
     }
@@ -110,7 +99,4 @@ public class GameState {
         snakeLength+=growth;
     }
 
-    public void setSnakeLength(int length) {
-        snakeLength = length;
-    }
 }

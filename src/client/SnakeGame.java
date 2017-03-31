@@ -56,7 +56,6 @@ public class SnakeGame {
     private void initialise() {
         // initialize the window beforehand
         try {
-            //setDisplayMode();
             Display.setDisplayMode(new DisplayMode(SCREEN_WIDTH, SCREEN_HEIGHT));
             Display.setTitle(ClientSettings.WINDOW_TITLE);
             Display.setFullscreen(ClientSettings.FULLSCREEN);
@@ -77,8 +76,6 @@ public class SnakeGame {
             textRenderers[1] = new TextRenderer(25);
             textRenderers[2] = new TextRenderer(60);
 
-            //Audio.init();
-            //AudioManager.playAmbiance();
         } catch (LWJGLException le) {
             System.err.println("Game exiting - exception in initialization:");
             le.printStackTrace();
