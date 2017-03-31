@@ -35,7 +35,10 @@ public class GameState {
             }
         }
 
-        blocks[phase][10][20] = new Portal(phase, 1);
+        int otherPhase = rand.nextInt(3);
+        if (otherPhase == phase) otherPhase = 3;
+
+        blocks[phase][10][20] = new Portal(phase, otherPhase);
 
         blocks[phase][7][10] = new Snake(true, null);
 
