@@ -1,6 +1,7 @@
 package client;
 
 import client.blocks.*;
+import client.graphics.PhaseRipple;
 
 import java.util.Random;
 
@@ -16,6 +17,7 @@ public class GameState {
     private int snakeLength;
     private boolean gameRunning;
     private int portalRotation;
+    private PhaseRipple ripple;
 
     public GameState() {
         snakeLength = STARTING_LENGTH;
@@ -24,6 +26,8 @@ public class GameState {
         phase = rand.nextInt(4);
         portalRotation = 0;
 
+        ripple = new PhaseRipple(0, 0, 0, 0);
+        ripple.kill();
 
         blocks = new Block[4][getMapWidth()][getMapHeight()];
         for (int i = 0; i < 4; i++) {
@@ -67,8 +71,9 @@ public class GameState {
         gameRunning = true;
     }
 
-    public Block[][] getBlocks() {
+    public Block[][] getBlocks(int phase) {
         return blocks[phase];
+
     }
 
     public Block getBlock(Vector2 pos) {
@@ -111,5 +116,13 @@ public class GameState {
 
     public int getPortalRotation() {
         return portalRotation;
+    }
+
+    public PhaseRipple getRipple() {
+        return ripple;
+    }
+
+    public void setRipple(PhaseRipple ripple) {
+        this.ripple = ripple;
     }
 }

@@ -235,4 +235,8 @@ public class Vector2{
         Random gen = new Random();
         return new Vector2(gen.nextFloat()*size, gen.nextFloat()*size);
     }
+
+    public Vector2 clone() {
+        return new Vector2(x, y);
+    }
 }

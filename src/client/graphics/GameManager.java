@@ -43,7 +43,12 @@ public class GameManager {
     public void run() {
         update();
         if (game.isRunning()) {
-            gameRenderer.render();
+            if (game.getRipple().isAlive()) {
+                gameRenderer.drawStencil();
+            }
+            else {
+                gameRenderer.render();
+            }
         }
         else {
             gameRenderer.drawMenu(!firstGame);
@@ -76,15 +81,31 @@ public class GameManager {
 
     private void makeMovement() {
         float delta = getDelta();
+
         counter += SNAKE_SPEED*delta;
         game.rotatePortal(delta);
+
+        if (game.getRipple().isAlive()) {
+            game.getRipple().spread(delta);
+        }
+
         if (counter > 100) {
             Vector2 pos = snake.get(0).getPos();
 
             Vector2 newPos = pos.add(dir);
 
             if (game.getBlock(newPos) instanceof Portal) {
-                game.setPhase(((Portal) game.getBlock(newPos)).getOtherPhase());
+                int oldPhase = game.getPhase();
+                int newPhase = ((Portal) game.getBlock(newPos)).getOtherPhase();
+                game.setPhase(newPhase);
+
+                Vector2 temp = newPos.clone();
+                temp = temp.mult(BLOCK_SIZE);
+                out("Old startx: "+game.getRipple().getStartX());
+                out("Aimed startx: "+temp.getX()+BLOCK_SIZE/2);
+                game.setRipple(new PhaseRipple(temp.getX()+BLOCK_SIZE/2, temp.getY() + BLOCK_SIZE/2, oldPhase, newPhase));
+                out("new startx: "+game.getRipple().getStartX());
+                gameRenderer.updateGameState(game);
             }
 
             if (validPos(newPos)) {

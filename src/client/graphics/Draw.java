@@ -16,7 +16,7 @@ import static org.lwjgl.opengl.GL11.*;
  */
 class Draw {
 
-    private static void drawRect(float x, float y, float rotation, float width, float height, Colour colour) {
+    static void drawRect(float x, float y, float rotation, float width, float height, Colour colour) {
         setColour(colour);
 
         glPushMatrix();
@@ -38,7 +38,7 @@ class Draw {
         glPopMatrix();
     }
 
-    private static void drawRectGlow(float x, float y, float rotation, float width, float height, Colour colour, float strokeWidth) {
+    static void drawRectGlow(float x, float y, float rotation, float width, float height, Colour colour, float strokeWidth) {
         Colour faded = colour.clone();
         faded.intensity = 0;
 

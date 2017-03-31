@@ -9,6 +9,7 @@ import java.util.LinkedList;
 
 import static client.ClientSettings.*;
 import static client.graphics.Draw.*;
+import static client.graphics.GameManager.out;
 
 class GameRenderer {
 
@@ -31,7 +32,7 @@ class GameRenderer {
      */
     void render() {
         colourBackground(game.getPhase());
-        drawMap();
+        drawMap(game.getPhase());
     }
 
     void updateGameState(GameState gs) {
@@ -45,8 +46,8 @@ class GameRenderer {
         }
     }
 
-    private void drawMap() {
-        Block[][] b = game.getBlocks();
+    private void drawMap(int phase) {
+        Block[][] b = game.getBlocks(phase);
         for (int i = 0; i < game.getMapWidth(); i++) {
             for (int j = 0; j < game.getMapHeight(); j++) {
                 if (b[i][j] != null) {
@@ -69,49 +70,46 @@ class GameRenderer {
     /**
      * Draws the the stencil for the pulse, including the layer underneath
      */
-    private void drawStencil(int newPhase) {
-        int oldPhase = 1;
-        if (newPhase == 1) oldPhase = 0;
+     void drawStencil() {
+         int oldPhase = game.getRipple().getOldPhase();
+         int newPhase = game.getRipple().getNewPhase();
 
-        //draws the old phase
-        colourBackground(oldPhase);
-        drawMap();
+         //draws the old phase
+         colourBackground(oldPhase);
+         drawMap(oldPhase);
 
-        GL11.glEnable(GL11.GL_STENCIL_TEST);
+         GL11.glEnable(GL11.GL_STENCIL_TEST);
 
-        GL11.glColorMask(false, false, false, false);
-        GL11.glStencilFunc(GL11.GL_ALWAYS, 1, 0xFF); // Set any stencil to 1
-        GL11.glStencilOp(GL11.GL_KEEP, GL11.GL_KEEP, GL11.GL_REPLACE);
-        GL11.glStencilMask(0xFF); // Write to stencil buffer
-        GL11.glDepthMask(false); // Don't write to depth buffer
-        GL11.glClear(GL11.GL_STENCIL_BUFFER_BIT); // Clear stencil buffer (0 by default)
+         GL11.glColorMask(false, false, false, false);
+         GL11.glStencilFunc(GL11.GL_ALWAYS, 1, 0xFF); // Set any stencil to 1
+         GL11.glStencilOp(GL11.GL_KEEP, GL11.GL_KEEP, GL11.GL_REPLACE);
+         GL11.glStencilMask(0xFF); // Write to stencil buffer
+         GL11.glDepthMask(false); // Don't write to depth buffer
+         GL11.glClear(GL11.GL_STENCIL_BUFFER_BIT); // Clear stencil buffer (0 by default)
 
-        //sets up the layer to be over drawn
-    /*    draw.drawCircle(pulse
-                .getStart().getX(), ClientSettings.SCREEN_HEIGHT - pulse
-                .getStart().getY(), pulse
-                .getRadius(), 500); */
+         //sets up the layer to be over drawn
+         PhaseRipple p = game.getRipple();
+         float r = p.getRadius();
+         drawRect(p.getStartX()-r, p.getStartY()-r, 0, r*2, r*2, new Colour(0, 0, 0));
 
-        GL11.glStencilFunc(GL11.GL_EQUAL, 1, 0xFF); // Pass test if stencil value is 1
-        GL11.glStencilMask(0x00); // Don't write anything to stencil buffer
-        GL11.glDepthMask(true); // Write to depth buffer
-        GL11.glColorMask(true, true, true, true);
 
-        //GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
+         GL11.glStencilFunc(GL11.GL_EQUAL, 1, 0xFF); // Pass test if stencil value is 1
+         GL11.glStencilMask(0x00); // Don't write anything to stencil buffer
+         GL11.glDepthMask(true); // Write to depth buffer
+         GL11.glColorMask(true, true, true, true);
 
-        GL11.glColor3f(0, 0, 0);
-    /*    draw.drawCircle(pulse
-                .getStart().getX(), ClientSettings.SCREEN_HEIGHT - pulse
-                .getStart().getY(), pulse
-                .getRadius(), 500); */
+         //GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 
-        //draws the new phase in the circle
-        colourBackground(newPhase);
-        drawMap();
+         GL11.glColor3f(0, 0, 0);
+         drawRect(p.getStartX()-r, p.getStartY()-r, 0, r*2, r*2, new Colour(0, 0, 0));
 
-        GL11.glDisable(GL11.GL_STENCIL_TEST);
+         //draws the new phase in the circle
+         colourBackground(newPhase);
+         drawMap(newPhase);
 
-        //pulse.draw();
+         GL11.glDisable(GL11.GL_STENCIL_TEST);
 
+
+         drawRectGlow(p.getStartX()-r, p.getStartY()-r, 0, r*2, r*2, PHASE_COLOURS[newPhase].clone(), 5);
     }
 }
