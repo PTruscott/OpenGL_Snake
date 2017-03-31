@@ -18,20 +18,64 @@ class Draw {
     private static void drawRect(float x, float y, float rotation, float width, float height, Colour colour) {
         setColour(colour);
         glPushMatrix();
-        
-        float cx = x;
-        float cy = SCREEN_HEIGHT-y;
+
+        float cx = x+width/2;
+        float cy = SCREEN_HEIGHT-(y+height/2);
         glTranslatef(cx, cy, 0);
         glRotatef(rotation, 0f, 0f, 1f);
         glTranslatef(-cx, -cy, 0);
         glBegin(GL_QUADS);
-        glVertex2f(cx, SCREEN_HEIGHT-y);
-        glVertex2f(cx+width, SCREEN_HEIGHT-y);
-        glVertex2f(cx+width, SCREEN_HEIGHT-(y+height));
-        glVertex2f(cx, SCREEN_HEIGHT-(y+height));
+        glVertex2f(x, SCREEN_HEIGHT-y);
+        glVertex2f(x+width, SCREEN_HEIGHT-y);
+        glVertex2f(x+width, SCREEN_HEIGHT-(y+height));
+        glVertex2f(x, SCREEN_HEIGHT-(y+height));
+
         glEnd();
 
         glPopMatrix();
+
+        drawRectGlow(x, y, rotation, width, height, colour, 5);
+    }
+
+    private static void drawRectGlow(float x, float y, float rotation, float width, float height, Colour colour, float strokeWidth) {
+        Colour faded = colour.clone();
+        faded.intensity = 0;
+
+        glPushMatrix();
+
+            float cx = x+width/2;
+            float cy = SCREEN_HEIGHT-(y+height/2);
+            glTranslatef(cx, cy, 0);
+            glRotatef(rotation, 0f, 0f, 1f);
+            glTranslatef(-cx, -cy, 0);
+
+            glBegin(GL_QUAD_STRIP);
+
+                setColour(faded);
+                glVertex2f(x - strokeWidth, SCREEN_HEIGHT-(y - strokeWidth));  //outer bottom left
+                setColour(colour);
+                glVertex2f(x, SCREEN_HEIGHT-y); //inner bottom left
+                setColour(faded);
+                glVertex2f(x + width+strokeWidth, SCREEN_HEIGHT-(y - strokeWidth)); //outer bottom right
+                setColour(colour);
+                glVertex2f(x + width, SCREEN_HEIGHT-y); //inner bottom right
+                setColour(faded);
+                glVertex2f(x + width+strokeWidth, SCREEN_HEIGHT-(y + height + strokeWidth)); //outer top right
+                setColour(colour);
+                glVertex2f(x + width, SCREEN_HEIGHT-(y + height)); //inner top right
+                setColour(faded);
+                glVertex2f(x - strokeWidth, SCREEN_HEIGHT-(y + height + strokeWidth)); //outer top left
+                setColour(colour);
+                glVertex2f(x, SCREEN_HEIGHT-(y + height)); //inner top left
+                setColour(faded);
+                glVertex2f(x - strokeWidth, SCREEN_HEIGHT-(y - strokeWidth));  //outer bottom left
+                setColour(colour);
+                glVertex2f(x, SCREEN_HEIGHT-y); //inner bottom left
+
+            glEnd();
+
+        glPopMatrix();
+
     }
 
     /**
