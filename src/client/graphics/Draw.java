@@ -32,9 +32,10 @@ class Draw {
     }
 
 
-    private static void drawQuad(float x, float y, float rotation, float width, float height, Colour colour) {
+    private static void drawRect(float x, float y, float rotation, float width, float height, Colour colour) {
         setColour(colour);
         glPushMatrix();
+        
         float cx = x;
         float cy = SCREEN_HEIGHT-y;
         glTranslatef(cx, cy, 0);
@@ -122,7 +123,7 @@ class Draw {
                 Colour other = ((Portal) b).getOtherColour(phase);
                 colour = ((Portal) b).getColour(phase);
 
-                drawQuad(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, other);
+                drawRect(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, other);
             }
 
             invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
@@ -135,7 +136,7 @@ class Draw {
         Colour colour = s.getColour();
 
         if (s.isHead()) {
-            drawQuad(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, colour);
+            drawRect(x*BLOCK_SIZE, y*BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE, colour);
         }
         invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
     }
@@ -343,8 +344,7 @@ class Draw {
     void colourBackground(int phase) {
         Colour c = PHASE_COLOURS[phase].clone();
         c.intensity = 0.1f;
-        setColour(c);
-        drawRect(0,0,width,height);
+        drawRect(0,0, 0,ClientSettings.SCREEN_WIDTH, ClientSettings.SCREEN_HEIGHT, c);
     }
 
     /**
@@ -383,48 +383,8 @@ class Draw {
         glEnd();
     }
 
-    /**
-     * Draws a rectangle
-     * @param xStart the start of the rect from the left
-     * @param yStart the start of the rect from the top
-     * @param rectWidth the width of the rectangle
-     * @param rectHeight the height of the rectange
-     */
-    private static void drawRect(float xStart, float yStart, float rectWidth, float rectHeight) {
-        glBegin(GL_QUADS);
-        glVertex2f(checkX(xStart), checkY(ClientSettings.SCREEN_HEIGHT - yStart));
-        glVertex2f(checkX(xStart + rectWidth), checkY(SCREEN_HEIGHT - yStart));
-        glVertex2f(checkX(xStart + rectWidth), checkY(SCREEN_HEIGHT - (yStart+rectHeight)));
-        glVertex2f(checkX(xStart), checkY(SCREEN_HEIGHT - (yStart+rectHeight)));
-        glEnd();
-    }
-
     private static void setColour(Colour c) {
         glColor4f(c.red,c.green,c.blue,c.intensity);
-    }
-
-    /**
-     * Keep x coordinate on the screen
-     *
-     * @param x Initial x coordinate
-     * @return Checked x coordinate
-     */
-    private static float checkX(float x) {
-        if (x < 0) x = 0;
-        if (x > SCREEN_WIDTH) x = SCREEN_WIDTH;
-        return x;
-    }
-
-    /**
-     * Keep y coordinate on the screen
-     *
-     * @param y Initial y coordinate
-     * @return Checked y coordinate
-     */
-    private static float checkY(float y) {
-        if (y < 0) y = 0;
-        if (y > SCREEN_HEIGHT) y = SCREEN_HEIGHT;
-        return y;
     }
 
 }
