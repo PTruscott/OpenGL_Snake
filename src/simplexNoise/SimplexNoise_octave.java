@@ -1,13 +1,3 @@
-package simplexNoise;
-
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.Random;
-import javax.imageio.ImageIO;
-
-
 /*
  * A speed-improved simplex noise algorithm for 2D, 3D and 4D in Java.
  *
@@ -25,9 +15,12 @@ import javax.imageio.ImageIO;
  *
  */
 
+package simplexNoise;
+
+import java.util.Random;
+
 public class SimplexNoise_octave {  // Simplex noise in 2D, 3D and 4D
 
-    public static int RANDOMSEED=0;
     private static int NUMBEROFSWAPS=400;
 
     private static Grad grad3[] = {new Grad(1,1,0),new Grad(-1,1,0),new Grad(1,-1,0),new Grad(-1,-1,0),
@@ -62,10 +55,12 @@ public class SimplexNoise_octave {  // Simplex noise in 2D, 3D and 4D
     // To remove the need for index wrapping, double the permutation table length
     private short perm[] = new short[512];
     private short permMod12[] = new short[512];
+
     public SimplexNoise_octave(int seed) {
         p=p_supply.clone();
 
-        if (seed==RANDOMSEED){
+        int RANDOMSEED = 0;
+        if (seed == RANDOMSEED){
             Random rand=new Random();
             seed=rand.nextInt();
         }

@@ -75,18 +75,17 @@ public class GameState {
         double yStart=0;
         double yEnd=500;
 
-        int xResolution=SCREEN_WIDTH/BLOCK_SIZE;
-        int yResolution=SCREEN_HEIGHT/BLOCK_SIZE;
+        double[][] result=new double[getMapWidth()][getMapHeight()];
 
-        double[][] result=new double[xResolution][yResolution];
-
-        for(int i=0;i<xResolution;i++){
-            for(int j=0;j<yResolution;j++){
-                int x=(int)(xStart+i*((XEnd-xStart)/xResolution));
-                int y=(int)(yStart+j*((yEnd-yStart)/yResolution));
+        for (int  i= 0; i < getMapWidth(); i++) {
+            for (int j = 0; j < getMapHeight(); j++){
+                int x = (int)(xStart+i*((XEnd-xStart)/getMapWidth()));
+                int y = (int)(yStart+j*((yEnd-yStart)/getMapHeight()));
                 result[i][j]=0.5*(1+simplexNoise.getNoise(x,y));
             }
         }
+
+
 
         for (int i = 0; i < 4; i++) {
             for (int x = 0; x < getMapWidth(); x++) {

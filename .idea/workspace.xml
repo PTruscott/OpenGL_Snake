@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a81a51-e509-45f8-b22b-57aa9f1d1148" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/simplexNoise/ImageGen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/simplexNoise/ImageWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/simplexNoise/SimplexNoise.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/simplexNoise/SimplexNoise_octave.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saved.png" afterPath="$PROJECT_DIR$/saved.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/GameState.java" afterPath="$PROJECT_DIR$/src/client/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameManager.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simplexNoise/SimplexNoise.java" afterPath="$PROJECT_DIR$/src/simplexNoise/SimplexNoise.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/simplexNoise/SimplexNoise_octave.java" afterPath="$PROJECT_DIR$/src/simplexNoise/SimplexNoise_octave.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,6 +32,37 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#3767#3768#0" expanded="true" />
                 <element signature="e#3817#3818#0" expanded="true" />
+                <marker date="1491056190677" expanded="false" signature="6690:6701" ph=" { " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4304#4305#0" expanded="true" />
+                <element signature="e#4341#4342#0" expanded="true" />
+                <element signature="e#4379#4380#0" expanded="true" />
+                <element signature="e#4408#4409#0" expanded="true" />
+                <element signature="e#4457#4458#0" expanded="true" />
+                <element signature="e#4493#4494#0" expanded="true" />
+                <marker date="1491086120544" expanded="false" signature="3014:3025" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3093:3104" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3174:3185" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3237:3248" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3303:3314" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3461:3472" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3581:3592" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3792:3803" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3891:3902" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="3958:3969" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="4027:4038" ph=" { " />
+                <marker date="1491086120544" expanded="false" signature="4102:4113" ph=" { " />
               </folding>
             </state>
           </provider>
@@ -41,10 +71,10 @@
       <file leaf-file-name="SimplexNoise_octave.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/simplexNoise/SimplexNoise_octave.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="15" column="59" lean-forward="false" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+            <state relative-caret-position="297">
+              <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#16743#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,31 +83,20 @@
       <file leaf-file-name="SimplexNoise.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/simplexNoise/SimplexNoise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="333">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageGen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simplexNoise/ImageGen.java">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="144">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="saved.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saved.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -85,27 +104,9 @@
         <entry file="file://$PROJECT_DIR$/src/simplexNoise/ImageWriter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
-              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/client/GameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="98" column="9" lean-forward="false" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4368#4369#0" expanded="true" />
-                <element signature="e#4405#4406#0" expanded="true" />
-                <element signature="e#4443#4444#0" expanded="true" />
-                <element signature="e#4472#4473#0" expanded="true" />
-                <element signature="e#4521#4522#0" expanded="true" />
-                <element signature="e#4557#4558#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/blocks/Food.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,7 +128,19 @@
         <entry file="file://$PROJECT_DIR$/src/client/graphics/GameRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
-              <caret line="72" column="25" lean-forward="true" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+              <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageGen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/simplexNoise/ImageGen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,7 +152,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/ClientSettings.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="333">
-              <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -218,11 +231,12 @@
         <option value="$PROJECT_DIR$/src/client/blocks/Food.java" />
         <option value="$PROJECT_DIR$/src/client/ClientSettings.java" />
         <option value="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
+        <option value="$PROJECT_DIR$/src/simplexNoise/ImageGen.java" />
+        <option value="$PROJECT_DIR$/src/simplexNoise/ImageWriter.java" />
+        <option value="$PROJECT_DIR$/src/client/GameState.java" />
         <option value="$PROJECT_DIR$/src/simplexNoise/SimplexNoise_octave.java" />
         <option value="$PROJECT_DIR$/src/simplexNoise/SimplexNoise.java" />
-        <option value="$PROJECT_DIR$/src/simplexNoise/ImageWriter.java" />
-        <option value="$PROJECT_DIR$/src/simplexNoise/ImageGen.java" />
-        <option value="$PROJECT_DIR$/src/client/GameState.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -295,6 +309,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -827,7 +845,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53665000" />
+    <option name="totallyTimeSpent" value="55032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1053" extended-state="6" />
@@ -882,16 +900,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="35" column="64" lean-forward="true" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/blocks/SnakeBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1069,7 +1077,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/ClientSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
-          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1077,17 +1085,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/blocks/Food.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="72" column="25" lean-forward="true" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1102,36 +1100,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3767#3768#0" expanded="true" />
             <element signature="e#3817#3818#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simplexNoise/SimplexNoise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simplexNoise/SimplexNoise_octave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="59" lean-forward="false" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simplexNoise/ImageWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1491056190677" expanded="false" signature="6690:6701" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1141,9 +1110,29 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simplexNoise/ImageGen.java">
+    <entry file="file://$PROJECT_DIR$/src/simplexNoise/ImageWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
+          <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simplexNoise/ImageGen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1153,17 +1142,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="98" column="9" lean-forward="false" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+        <state relative-caret-position="423">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4368#4369#0" expanded="true" />
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4443#4444#0" expanded="true" />
-            <element signature="e#4472#4473#0" expanded="true" />
-            <element signature="e#4521#4522#0" expanded="true" />
-            <element signature="e#4557#4558#0" expanded="true" />
+            <element signature="e#4304#4305#0" expanded="true" />
+            <element signature="e#4341#4342#0" expanded="true" />
+            <element signature="e#4379#4380#0" expanded="true" />
+            <element signature="e#4408#4409#0" expanded="true" />
+            <element signature="e#4457#4458#0" expanded="true" />
+            <element signature="e#4493#4494#0" expanded="true" />
+            <marker date="1491086120544" expanded="false" signature="3014:3025" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3093:3104" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3174:3185" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3237:3248" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3303:3314" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3461:3472" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3581:3592" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3792:3803" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3891:3902" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="3958:3969" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="4027:4038" ph=" { " />
+            <marker date="1491086120544" expanded="false" signature="4102:4113" ph=" { " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simplexNoise/SimplexNoise_octave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#16743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simplexNoise/SimplexNoise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
