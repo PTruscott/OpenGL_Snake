@@ -1,5 +1,6 @@
 package client.graphics;
 import client.GameState;
+import client.blocks.Air;
 import client.blocks.Block;
 import client.blocks.Portal;
 import client.blocks.SnakeBlock;
@@ -9,9 +10,8 @@ import java.util.LinkedList;
 
 import static client.ClientSettings.*;
 import static client.graphics.Draw.*;
-import static client.graphics.GameManager.out;
 
-class GameRenderer {
+public class GameRenderer {
 
     private GameState game;
     private TextRenderer[] textRenderers;
@@ -21,7 +21,7 @@ class GameRenderer {
      * Sets up a new game renderer to show the game on screen
      * @param textRenderers how to display text
      */
-    GameRenderer(GameState game, TextRenderer[] textRenderers, LinkedList<SnakeBlock> snake) {
+    public GameRenderer(GameState game, TextRenderer[] textRenderers, LinkedList<SnakeBlock> snake) {
         this.textRenderers = textRenderers;
         this.game = game;
         this.snake = snake;
@@ -30,16 +30,16 @@ class GameRenderer {
     /**
      * The main render method
      */
-    void render() {
+    public void render() {
         colourBackground(game.getPhase());
         drawMap(game.getPhase());
     }
 
-    void updateGameState(GameState gs) {
+    public void updateGameState(GameState gs) {
         this.game = gs;
     }
 
-    void drawMenu(boolean drawScore) {
+    public void drawMenu(boolean drawScore) {
         drawText(textRenderers[1], "WELCOME TO SNAKE", SCREEN_WIDTH/2-200, SCREEN_HEIGHT/2, 1, 1, 1);
         if (drawScore) {
             drawText(textRenderers[0], "YOUR SCORE WAS "+(game.getSnakeLength()-STARTING_LENGTH), SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+100, 1, 1, 1);
@@ -50,7 +50,7 @@ class GameRenderer {
         Block[][] b = game.getBlocks(phase);
         for (int i = 0; i < game.getMapWidth(); i++) {
             for (int j = 0; j < game.getMapHeight(); j++) {
-                if (b[i][j] != null) {
+                if (!(b[i][j] instanceof Air)) {
                     if (b[i][j] instanceof Portal) {
                         drawPortal(i,j,(Portal) b[i][j], game.getPortalRotation());
                     }
@@ -70,7 +70,7 @@ class GameRenderer {
     /**
      * Draws the the stencil for the pulse, including the layer underneath
      */
-     void drawStencil() {
+    public void drawStencil() {
          int oldPhase = game.getRipple().getOldPhase();
          int newPhase = game.getRipple().getNewPhase();
 

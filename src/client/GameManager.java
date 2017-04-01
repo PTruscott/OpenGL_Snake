@@ -1,10 +1,11 @@
-package client.graphics;
+package client;
 
-import client.GameState;
-import client.Vector2;
 import client.blocks.Food;
 import client.blocks.Portal;
 import client.blocks.SnakeBlock;
+import client.graphics.GameRenderer;
+import client.graphics.PhaseRipple;
+import client.graphics.TextRenderer;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
@@ -31,7 +32,7 @@ public class GameManager {
     private LinkedList<SnakeBlock> snake;
 
 
-    public GameManager(TextRenderer[] textRenderers) {
+    GameManager(TextRenderer[] textRenderers) {
         super();
         firstGame = true;
         snake = new LinkedList<>();
@@ -40,7 +41,7 @@ public class GameManager {
         lastFrame = getTime();
     }
 
-    public void run() {
+    void run() {
         update();
         if (game.isRunning()) {
             if (game.getRipple().isAlive()) {
@@ -237,7 +238,12 @@ public class GameManager {
             game.startGame();
             dir = new Vector2(1, 0);
         }
-        snake.add(0, new SnakeBlock(true, new Vector2(10, 10), game.getPhase()));
+        snake.add(0, new SnakeBlock(true, STARTING_POS, game.getPhase()));
+        for (int i = 0; i < STARTING_RUNWAY; i++) {
+            if (game.getBlock(new Vector2(STARTING_POS.getX()+i, STARTING_POS.getY())).isCollidable()) {
+                game.clearBlock(new Vector2(STARTING_POS.getX()+i, STARTING_POS.getY()));
+            }
+        }
         getDelta();
     }
 

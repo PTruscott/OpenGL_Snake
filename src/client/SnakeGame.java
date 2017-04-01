@@ -1,6 +1,5 @@
 package client;
 
-import client.graphics.GameManager;
 import client.graphics.TextRenderer;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;

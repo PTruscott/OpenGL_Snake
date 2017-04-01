@@ -36,7 +36,7 @@ public class PhaseRipple {
         return startY;
     }
 
-    boolean isAlive() {
+    public boolean isAlive() {
         return alive;
     }
 
@@ -48,7 +48,7 @@ public class PhaseRipple {
         alive = false;
     }
 
-    void spread(float delta) {
+    public void spread(float delta) {
         radius+=speed*delta;
         if (radius+startX > SCREEN_WIDTH && startX-radius < 0 && radius+startY > SCREEN_HEIGHT && startY-radius < 0) {
             kill();

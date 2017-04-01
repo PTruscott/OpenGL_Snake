@@ -1,6 +1,7 @@
 .idea/
 out/
 *.class
+workspace.xml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

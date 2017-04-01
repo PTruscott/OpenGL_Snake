@@ -7,7 +7,7 @@ import client.graphics.Colour;
  */
 public class ClientSettings {
 
-    public static final boolean DEBUG = true;
+    static final boolean DEBUG = true;
 
     // ***** DISPLAY SETTINGS *****
 
@@ -20,8 +20,10 @@ public class ClientSettings {
 
     public static final int BLOCK_SIZE = 20;
     public static final int STARTING_LENGTH = 4;
-    public static final float SNAKE_SPEED = 1;
+    static final float SNAKE_SPEED = 1;
     public static final int FOOD_REWARD  = 2;
+    static final Vector2 STARTING_POS = new Vector2(10, 10);
+    static final int STARTING_RUNWAY = 5;
 
     // ***** GRAPHICS SETTINGS *****
     public static Colour[] PHASE_COLOURS = {
@@ -30,7 +32,7 @@ public class ClientSettings {
       new Colour(0, 0, 1), //phase 2
       new Colour(1, 1, 0)  //phase 3
     };
-    public static float MIN_SNAKE_GLOW = 0.2f;
+    static float MIN_SNAKE_GLOW = 0.2f;
     static float PORTAL_SPEED = 6;
     public static float RIPPLE_SPEED = 1;
 

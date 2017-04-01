@@ -21,7 +21,7 @@ public class GameState {
     private int portalRotation;
     private PhaseRipple ripple;
 
-    public GameState() {
+    GameState() {
         snakeLength = STARTING_LENGTH;
         gameRunning = false;
         Random rand = new Random();
@@ -68,30 +68,29 @@ public class GameState {
 
         blocks = new Block[4][getMapWidth()][getMapHeight()];
 
-        SimplexNoise simplexNoise=new SimplexNoise(100,0.1, rand.nextInt(10000));
-
         double xStart=0;
         double XEnd=500;
         double yStart=0;
         double yEnd=500;
 
-        double[][] result=new double[getMapWidth()][getMapHeight()];
-
-        for (int  i= 0; i < getMapWidth(); i++) {
-            for (int j = 0; j < getMapHeight(); j++){
-                int x = (int)(xStart+i*((XEnd-xStart)/getMapWidth()));
-                int y = (int)(yStart+j*((yEnd-yStart)/getMapHeight()));
-                result[i][j]=0.5*(1+simplexNoise.getNoise(x,y));
-            }
-        }
-
-
 
         for (int i = 0; i < 4; i++) {
+            SimplexNoise simplexNoise=new SimplexNoise(100,0.1, rand.nextInt());
             for (int x = 0; x < getMapWidth(); x++) {
                 for (int y = 0; y < getMapHeight(); y++) {
                     if (x == 0 || y == 0 || y == getMapHeight()-1 || x == getMapWidth()-1) {
                         blocks[i][x][y] = new Wall(i);
+                    }
+                    else {
+                        int xNoise = (int)(xStart+x*((XEnd-xStart)/getMapWidth()));
+                        int yNoise = (int)(yStart+y*((yEnd-yStart)/getMapHeight()));
+                        double val = simplexNoise.getNoise(xNoise,yNoise);
+                        if (val < -0.06) {
+                            blocks[i][x][y] = new Wall(i);
+                        }
+                        else {
+                            blocks[i][x][y] = new Air();
+                        }
                     }
                 }
             }
@@ -106,15 +105,15 @@ public class GameState {
         return SCREEN_HEIGHT/BLOCK_SIZE;
     }
 
-    public boolean isRunning() {
+    boolean isRunning() {
         return gameRunning;
     }
 
-    public void endGame() {
+    void endGame() {
         gameRunning = false;
     }
 
-    public void startGame() {
+    void startGame() {
         gameRunning = true;
     }
 
@@ -123,7 +122,7 @@ public class GameState {
 
     }
 
-    public Block getBlock(Vector2 pos) {
+    Block getBlock(Vector2 pos) {
         return blocks[phase][(int)pos.getX()][(int)pos.getY()];
     }
 
@@ -131,12 +130,12 @@ public class GameState {
         setBlock(phase, b, pos);
     }
 
-    public void setBlock(int phase, Block b, Vector2 pos) {
+    void setBlock(int phase, Block b, Vector2 pos) {
         blocks[phase][(int)pos.getX()][(int)pos.getY()] = b;
 
     }
 
-    public void clearBlock(Vector2 pos) {
+    void clearBlock(Vector2 pos) {
         blocks[phase][(int)pos.getX()][(int)pos.getY()] = null;
     }
 
@@ -144,7 +143,7 @@ public class GameState {
         return phase;
     }
 
-    public void setPhase(int phase) {
+    void setPhase(int phase) {
         this.phase = phase;
     }
 
@@ -152,11 +151,11 @@ public class GameState {
         return snakeLength;
     }
 
-    public void growSnake(int growth) {
+    void growSnake(int growth) {
         snakeLength+=growth;
     }
 
-    public void rotatePortal(float delta) {
+    void rotatePortal(float delta) {
         portalRotation %= 360;
         portalRotation += PORTAL_SPEED*delta;
     }
@@ -169,7 +168,7 @@ public class GameState {
         return ripple;
     }
 
-    public void setRipple(PhaseRipple ripple) {
+    void setRipple(PhaseRipple ripple) {
         this.ripple = ripple;
     }
 }

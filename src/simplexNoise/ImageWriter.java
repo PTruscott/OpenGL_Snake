@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-import static client.graphics.GameManager.out;
+import static client.GameManager.out;
 
 public class ImageWriter {
     //just convinence methods for debug
