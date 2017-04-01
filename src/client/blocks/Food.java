@@ -1,5 +1,6 @@
 package client.blocks;
 
+import static client.ClientSettings.FOOD_REWARD;
 import static client.ClientSettings.PHASE_COLOURS;
 
 /**
@@ -13,7 +14,7 @@ public class Food extends Block {
         this.phase = phase;
         this.collidable = false;
         this.colour = PHASE_COLOURS[phase].clone();
-        growth = 1;
+        growth = FOOD_REWARD;
     }
 
     public int getGrowth() {

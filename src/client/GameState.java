@@ -41,6 +41,10 @@ public class GameState {
             }
         }
         generatePortals();
+        blocks[phase][10][17] = new Food(phase);
+        int nextPhase = (phase+1)%4;
+        blocks[nextPhase][13][4] = new Food(nextPhase);
+
     }
 
     private void generatePortals() {
@@ -64,10 +68,6 @@ public class GameState {
             phases.remove(0);
         }
 
-
-
-
-        blocks[phase][10][17] = new Food(phase);
     }
 
     public int getMapWidth() {

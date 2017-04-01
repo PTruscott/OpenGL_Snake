@@ -19,8 +19,9 @@ public class ClientSettings {
     // ***** GAME SETTINGS *****
 
     public static final int BLOCK_SIZE = 20;
-    public static final int STARTING_LENGTH = 10;
+    public static final int STARTING_LENGTH = 4;
     public static final float SNAKE_SPEED = 1;
+    public static final int FOOD_REWARD  = 2;
 
     // ***** GRAPHICS SETTINGS *****
     public static Colour[] PHASE_COLOURS = {

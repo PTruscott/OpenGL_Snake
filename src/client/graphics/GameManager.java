@@ -98,7 +98,6 @@ public class GameManager {
                 int oldPhase = game.getPhase();
                 int newPhase = ((Portal) game.getBlock(newPos)).getOtherPhase();
                 game.setPhase(newPhase);
-
                 Vector2 temp = newPos.clone();
                 temp = temp.mult(BLOCK_SIZE);
                 game.setRipple(new PhaseRipple(temp.getX()+BLOCK_SIZE/2, temp.getY() + BLOCK_SIZE/2, oldPhase, newPhase));
@@ -109,7 +108,8 @@ public class GameManager {
                 if (game.getBlock(newPos) instanceof Food) {
                     game.growSnake(((Food) game.getBlock(newPos)).getGrowth());
                     game.clearBlock(newPos);
-                    game.setBlock(new Food(game.getPhase()), respawnPos());
+                    Random rand = new Random();
+                    game.setBlock(rand.nextInt(4), new Food(game.getPhase()), respawnPos());
                 }
                 snake.add(0, new SnakeBlock(true, newPos, game.getPhase()));
             }
