@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a81a51-e509-45f8-b22b-57aa9f1d1148" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ClientSettings.java" afterPath="$PROJECT_DIR$/src/client/ClientSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/GameState.java" afterPath="$PROJECT_DIR$/src/client/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/blocks/Food.java" afterPath="$PROJECT_DIR$/src/client/blocks/Food.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/graphics/GameManager.java" afterPath="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="111" column="51" lean-forward="false" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="51" />
+            <state relative-caret-position="431">
+              <caret line="112" column="63" lean-forward="false" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="45" column="30" lean-forward="false" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+            <state relative-caret-position="87">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3575#3576#0" expanded="true" />
@@ -237,8 +234,8 @@
         <option value="$PROJECT_DIR$/src/client/graphics/GameRenderer.java" />
         <option value="$PROJECT_DIR$/src/client/blocks/Food.java" />
         <option value="$PROJECT_DIR$/src/client/ClientSettings.java" />
-        <option value="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
         <option value="$PROJECT_DIR$/src/client/GameState.java" />
+        <option value="$PROJECT_DIR$/src/client/graphics/GameManager.java" />
       </list>
     </option>
   </component>
@@ -842,12 +839,12 @@
       <workItem from="1490608301760" duration="69000" />
       <workItem from="1490835183772" duration="5551000" />
       <workItem from="1490840805331" duration="15636000" />
-      <workItem from="1490994202904" duration="11003000" />
+      <workItem from="1490994202904" duration="11315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51433000" />
+    <option name="totallyTimeSpent" value="51745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="31" width="1922" height="1053" extended-state="6" />
@@ -1181,20 +1178,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="111" column="51" lean-forward="false" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="45" column="30" lean-forward="false" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        <state relative-caret-position="87">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3575#3576#0" expanded="true" />
@@ -1203,6 +1190,16 @@
             <element signature="e#3679#3680#0" expanded="true" />
             <element signature="e#3728#3729#0" expanded="true" />
             <element signature="e#3764#3765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/graphics/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="112" column="63" lean-forward="false" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

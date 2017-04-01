@@ -109,7 +109,8 @@ public class GameManager {
                     game.growSnake(((Food) game.getBlock(newPos)).getGrowth());
                     game.clearBlock(newPos);
                     Random rand = new Random();
-                    game.setBlock(rand.nextInt(4), new Food(game.getPhase()), respawnPos());
+                    int foodPhase = rand.nextInt(4)
+                    game.setBlock(foodPhase, new Food(foodPhase), respawnPos());
                 }
                 snake.add(0, new SnakeBlock(true, newPos, game.getPhase()));
             }
