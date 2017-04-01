@@ -2,6 +2,7 @@ package client;
 
 import client.blocks.*;
 import client.graphics.PhaseRipple;
+import simplexNoise.SimplexNoise;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -30,17 +31,9 @@ public class GameState {
         ripple = new PhaseRipple(0, 0, 0, 0);
         ripple.kill();
 
-        blocks = new Block[4][getMapWidth()][getMapHeight()];
-        for (int i = 0; i < 4; i++) {
-            for (int x = 0; x < getMapWidth(); x++) {
-                for (int y = 0; y < getMapHeight(); y++) {
-                    if (x == 0 || y == 0 || y == getMapHeight()-1 || x == getMapWidth()-1) {
-                        blocks[i][x][y] = new Wall(i);
-                    }
-                }
-            }
-        }
+        generateMap();
         generatePortals();
+
         blocks[phase][10][17] = new Food(phase);
         int nextPhase = (phase+1)%4;
         blocks[nextPhase][13][4] = new Food(nextPhase);
@@ -68,6 +61,42 @@ public class GameState {
             phases.remove(0);
         }
 
+    }
+
+    private void generateMap() {
+        Random rand = new Random();
+
+        blocks = new Block[4][getMapWidth()][getMapHeight()];
+
+        SimplexNoise simplexNoise=new SimplexNoise(100,0.1, rand.nextInt(10000));
+
+        double xStart=0;
+        double XEnd=500;
+        double yStart=0;
+        double yEnd=500;
+
+        int xResolution=SCREEN_WIDTH/BLOCK_SIZE;
+        int yResolution=SCREEN_HEIGHT/BLOCK_SIZE;
+
+        double[][] result=new double[xResolution][yResolution];
+
+        for(int i=0;i<xResolution;i++){
+            for(int j=0;j<yResolution;j++){
+                int x=(int)(xStart+i*((XEnd-xStart)/xResolution));
+                int y=(int)(yStart+j*((yEnd-yStart)/yResolution));
+                result[i][j]=0.5*(1+simplexNoise.getNoise(x,y));
+            }
+        }
+
+        for (int i = 0; i < 4; i++) {
+            for (int x = 0; x < getMapWidth(); x++) {
+                for (int y = 0; y < getMapHeight(); y++) {
+                    if (x == 0 || y == 0 || y == getMapHeight()-1 || x == getMapWidth()-1) {
+                        blocks[i][x][y] = new Wall(i);
+                    }
+                }
+            }
+        }
     }
 
     public int getMapWidth() {

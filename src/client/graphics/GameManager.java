@@ -241,7 +241,7 @@ public class GameManager {
         getDelta();
     }
 
-    static void out(Object o) {
+    public static void out(Object o) {
         if (DEBUG) System.out.println(o);
     }
 }
