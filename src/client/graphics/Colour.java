@@ -5,9 +5,10 @@ package client.graphics;
  * Used to pass float colours around
  */
 public class Colour {
-    public float red;
-    public float green;
-    public float blue;
+
+    float red;
+    float green;
+    float blue;
     public float intensity;
 
     public Colour(float red, float blue, float green) {
@@ -26,6 +27,14 @@ public class Colour {
         this.blue = c.blue;
         this.green = c.green;
         this.intensity = c.intensity;
+    }
+
+    static Colour BLACK() {
+        return new Colour(0, 0, 0, 1);
+    }
+
+    static Colour WHITE() {
+        return new Colour(1, 1, 1, 1);
     }
 
     public Colour clone() {

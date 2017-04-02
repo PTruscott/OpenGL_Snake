@@ -40,9 +40,10 @@ public class GameRenderer {
     }
 
     public void drawMenu(boolean drawScore) {
-        drawText(textRenderers[1], "WELCOME TO SNAKE", SCREEN_WIDTH/2-200, SCREEN_HEIGHT/2, 1, 1, 1);
+        drawText(textRenderers[1], "WELCOME TO SNAKE", SCREEN_WIDTH/2, SCREEN_HEIGHT/4, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
         if (drawScore) {
-            drawText(textRenderers[0], "YOUR SCORE WAS "+(game.getSnakeLength()-STARTING_LENGTH), SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2+100, 1, 1, 1);
+            float xOffest = textRenderers[1].getCharHeight()*2;
+            drawText(textRenderers[0], "YOUR SCORE WAS "+(game.getSnakeLength()-STARTING_LENGTH), SCREEN_WIDTH/2, SCREEN_HEIGHT/4+xOffest, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
         }
     }
 

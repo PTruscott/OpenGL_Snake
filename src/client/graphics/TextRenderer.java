@@ -19,9 +19,8 @@ public class TextRenderer {
         put(1, "abcdefghijklmnopqrstuvwxyz");
         put(2, "0123456789:,.()");
         put(3, "abcdefghijklmnopqrstuvwxyz");
-        //put(3, "ÄÖÜäöüß");
         put(4, " ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-        //put(4, "AB-*/=%\"'#@&_(),.;:?!\\|<>[]§`^~");
+        //put(4, "-*/=%\"'#@&_(),.;:?!\\|<>[]§`^~");
     }};
 
     //Variables
@@ -29,14 +28,14 @@ public class TextRenderer {
     private FontMetrics fontMetrics;
     private BufferedImage bufferedImage;
     private int fontTextureId;
-    private java.awt.Color colour ;
+    private java.awt.Color colour;
+    public enum Alignment{
+        LEFT, RIGHT, CENTRE
+    };
 
 
     public TextRenderer(int size)  {
         this.font = new java.awt.Font("Agency FB", java.awt.Font.BOLD, size);
-        //Font font = new Font("Verdana", Font.BOLD, 32);
-        //UnicodeFont f = new UnicodeFont(font);
-       // this.font = f;
 
         //Generate buffered image
         GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
@@ -58,11 +57,25 @@ public class TextRenderer {
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    //Functions
+
     void drawText(String text, float x, float y) {
+        drawText(text, x, y, Alignment.LEFT);
+    }
+
+    void drawText(String text, float x, float y, Alignment alignment) {
         glBindTexture(GL_TEXTURE_2D, this.fontTextureId);
         glBegin(GL_QUADS);
         y = ClientSettings.SCREEN_HEIGHT - y;
+
+        if (alignment == Alignment.RIGHT || alignment == Alignment.CENTRE) {
+            float xShift = -getStringWidth(text);
+
+            if (alignment == Alignment.CENTRE) {
+                xShift /= 2;
+                y -= getCharHeight()/2;
+            }
+            x += xShift;
+        }
 
         float xTmp = x;
         for (char c : text.toCharArray()) {
@@ -90,19 +103,23 @@ public class TextRenderer {
 
         glEnd();
         glBindTexture(GL_TEXTURE_2D, 0);
-
     }
+
     //Getters
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     private float getFontImageWidth() {
         return (float) CHARS.values().stream().mapToDouble(e -> fontMetrics.getStringBounds(e, null).getWidth()).max().getAsDouble();
     }
+
     private float getFontImageHeight() {
         return (float) CHARS.keySet().size() * (this.getCharHeight());
     }
+
     private float getCharX(char c) {
         String originStr = CHARS.values().stream().filter(e -> e.contains("" + c)).findFirst().orElse("" + c);
         return (float) fontMetrics.getStringBounds(originStr.substring(0, originStr.indexOf(c)), null).getWidth();
     }
+
     private float getCharY(char c) {
         float lineId = (float) CHARS.keySet().stream().filter(i -> CHARS.get(i).contains("" + c)).findFirst().orElse(0);
         return this.getCharHeight() * lineId;
@@ -110,9 +127,19 @@ public class TextRenderer {
     private float getCharWidth(char c) {
         return fontMetrics.charWidth(c);
     }
-    private float getCharHeight() {
+
+    float getCharHeight() {
         return (float) (fontMetrics.getMaxAscent() + fontMetrics.getMaxDescent());
     }
+
+    float getStringWidth(String string) {
+        float width = 0;
+        for (char c : string.toCharArray()) {
+            width += getCharWidth(c);
+        }
+        return width;
+    }
+
     public Color getColour()
     {
         return colour;
@@ -136,7 +163,7 @@ public class TextRenderer {
 
         // draw every CHAR by line...
         imageGraphics.setColor(colour);
-        CHARS.keySet().stream().forEach(i -> imageGraphics.drawString(CHARS.get(i), 0, fontMetrics.getMaxAscent() + (this.getCharHeight() * i)));
+        CHARS.keySet().forEach(i -> imageGraphics.drawString(CHARS.get(i), 0, fontMetrics.getMaxAscent() + (this.getCharHeight() * i)));
 
         //Generate texture data
         int[] pixels = new int[bufferedImage.getWidth() * bufferedImage.getHeight()];

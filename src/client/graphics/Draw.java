@@ -7,7 +7,6 @@ import client.blocks.Portal;
 import client.blocks.SnakeBlock;
 
 import static client.ClientSettings.*;
-import static client.GameManager.out;
 import static org.lwjgl.opengl.GL11.*;
 
 
@@ -117,7 +116,8 @@ class Draw {
     static void drawBlock(int x, int y, Block b) {
         Colour colour = b.getColour();
         if (b instanceof Food) {
-            drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/5, colour);
+            drawCircle((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE, BLOCK_SIZE/2, Colour.WHITE());
+            drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/2, colour);
         }
         else {
             invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
@@ -194,14 +194,13 @@ class Draw {
      * @param s the string to draw
      * @param x left of the string
      * @param y the top of the string
-     * @param red the red component
-     * @param green the green component
-     * @param blue the blue component
+     * @param colour the colour of the text
+     * @param alignment the text align used
      */
-    static void drawText(TextRenderer tx, String s, float x, float y, float red, float green, float blue) {
+    static void drawText(TextRenderer tx, String s, float x, float y, Colour colour, TextRenderer.Alignment alignment){
         glEnable(GL_TEXTURE_2D);
-        glColor4f(red,green,blue,1);
-        tx.drawText(s, x, y);
+        setColour(colour);
+        tx.drawText(s, x, y, alignment);
         glDisable(GL_TEXTURE_2D);
     }
 
