@@ -49,21 +49,67 @@ public class GameRenderer {
     }
 
     private void drawFPS() {
-        drawText(textRenderers[0], ""+fps, SCREEN_WIDTH-10, 100, Colour.WHITE(), TextRenderer.Alignment.RIGHT);
+        drawText(textRenderers[0], ""+fps, SCREEN_WIDTH-BLOCK_SIZE*1.5f, 100, Colour.WHITE(), TextRenderer.Alignment.RIGHT);
         updateFPS();
     }
     private void drawScore() {
         int score = (game.getSnakeLength()-STARTING_LENGTH)/FOOD_REWARD;
-        drawText(textRenderers[0], ""+score, SCREEN_WIDTH-10, 10, Colour.WHITE(), TextRenderer.Alignment.RIGHT);
+        drawText(textRenderers[0], ""+score, SCREEN_WIDTH-BLOCK_SIZE*1.5f, BLOCK_SIZE*1.5f, Colour.WHITE(), TextRenderer.Alignment.RIGHT);
     }
 
     public void drawMenu(boolean drawScore) {
-        drawText(textRenderers[1], "WELCOME TO SNAKE", SCREEN_WIDTH/2, SCREEN_HEIGHT/4, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
+
+        float y = SCREEN_HEIGHT/4;
+        float x = SCREEN_WIDTH/2;
+
+        drawText(textRenderers[1], "WELCOME TO SNAKE", x, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
         if (drawScore) {
-            float xOffset = textRenderers[1].getCharHeight()*2;
+            y += textRenderers[1].getCharHeight()*2;
             int score = (game.getSnakeLength()-STARTING_LENGTH)/FOOD_REWARD;
-            drawText(textRenderers[0], "YOUR SCORE WAS "+score, SCREEN_WIDTH/2, SCREEN_HEIGHT/4+xOffset, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
+            drawText(textRenderers[0], "YOUR SCORE WAS "+score, x, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
         }
+
+        y = SCREEN_HEIGHT/5*3;
+        float textHeight = textRenderers[0].getCharHeight();
+        y -= textHeight*1.5;
+        float textLength = textRenderers[0].getStringWidth("DISPLAY SCORE");
+        //each rectangle would be length * 1.5
+        //want a gap of .5
+        //centre of left would be mid - length
+        Colour colour;
+        if (MENU_STATE == 0) {
+            colour = PHASE_COLOURS[0].clone();
+        }
+        else {
+            colour = Colour.WHITE();
+        }
+        if (DISPLAY_SCORE) {
+            invertedRectGlow(x - textLength * 1.75f, y + 4, textLength * 1.5f, textHeight * 1.5f, 5, colour);
+        }
+        else {
+            invertedRectGlow(x + textLength * .25f, y + 4, textLength * 1.5f, textHeight * 1.5f, 5, colour);
+        }
+        drawText(textRenderers[0], "DISPLAY SCORE", x - textLength, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
+        drawText(textRenderers[0], "NAY SCORE", x + textLength, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
+
+        y += textHeight*3;
+        if (MENU_STATE == 1) {
+            colour = PHASE_COLOURS[0].clone();
+        }
+        else {
+            colour = Colour.WHITE();
+        }
+        if (RANDOM_MAP) {
+            invertedRectGlow(x - textLength * 1.75f, y + 4, textLength * 1.5f, textHeight * 1.5f, 5, colour);
+        }
+        else {
+            invertedRectGlow(x + textLength * .25f, y + 4, textLength * 1.5f, textHeight * 1.5f, 5, colour);
+        }
+        drawText(textRenderers[0], "RANDOM MAP", x - textLength, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
+        drawText(textRenderers[0], "BORING MAP", x + textLength, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
+
+        y += textHeight*4;
+        drawText(textRenderers[0], "PRESS SPACE TO START", x, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
     }
 
     private void drawMap(int phase) {

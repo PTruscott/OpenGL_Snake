@@ -15,6 +15,7 @@ public class ClientSettings {
     public static final int SCREEN_WIDTH = 800;
     public static final int SCREEN_HEIGHT = 600;
     static final boolean FULLSCREEN = false;
+    public static int MENU_STATE = 0;
 
     // ***** GAME SETTINGS *****
 
@@ -24,7 +25,7 @@ public class ClientSettings {
     public static final int FOOD_REWARD  = 2;
     static final Vector2 STARTING_POS = new Vector2(10, 10);
     static final int STARTING_RUNWAY = 6;
-    static boolean RANDOM_MAP = true;
+    public static boolean RANDOM_MAP = true;
 
     // ***** GRAPHICS SETTINGS *****
     public static Colour[] PHASE_COLOURS = {

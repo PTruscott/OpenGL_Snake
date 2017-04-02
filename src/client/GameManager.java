@@ -171,17 +171,45 @@ public class GameManager {
                 firstGame = false;
                 resetGame();
                 break;
+            case Keyboard.KEY_DOWN:
+            case Keyboard.KEY_S:
+            case Keyboard.KEY_UP:
+            case Keyboard.KEY_W:
+                if (!Keyboard.getEventKeyState()) {
+                    if (MENU_STATE == 0) {
+                        MENU_STATE = 1;
+                    }
+                    else MENU_STATE = 0;
+                }
+                break;
+            case Keyboard.KEY_D:
+            case Keyboard.KEY_A:
+            case Keyboard.KEY_RIGHT:
+            case Keyboard.KEY_LEFT:
+                if (!Keyboard.getEventKeyState()) {
+                    if (MENU_STATE == 0) {
+                        DISPLAY_SCORE = !DISPLAY_SCORE;
+                    }
+                    else {
+                        RANDOM_MAP = !RANDOM_MAP;
+                    }
+                }
+                break;
         }
     }
 
     private void gameKeyboard() {
         switch (Keyboard.getEventKey()) {
+            case Keyboard.KEY_ESCAPE:
+                game.endGame();
+                break;
             case Keyboard.KEY_F:
                 if (!Keyboard.getEventKeyState()) {
                     DISPLAY_FPS = !DISPLAY_FPS;
                 }
                 break;
             case Keyboard.KEY_C:
+                //means key is released for some reason
                 if (!Keyboard.getEventKeyState()) {
                     DISPLAY_SCORE = !DISPLAY_SCORE;
                 }

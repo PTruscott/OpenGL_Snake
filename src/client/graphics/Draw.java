@@ -120,7 +120,7 @@ class Draw {
             drawAura(new Vector2((x+.5f)*BLOCK_SIZE, (y+.5f)*BLOCK_SIZE), BLOCK_SIZE/2, BLOCK_SIZE/2, colour);
         }
         else {
-            invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
+            invertedRectGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour);
         }
     }
 
@@ -132,7 +132,7 @@ class Draw {
 
         drawRect(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, rotation, BLOCK_SIZE/2, BLOCK_SIZE/2, other);
         drawRectGlow(x*BLOCK_SIZE+BLOCK_SIZE/4, y*BLOCK_SIZE+BLOCK_SIZE/4, rotation, BLOCK_SIZE/2, BLOCK_SIZE/2, other, BLOCK_SIZE/6);
-        invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
+        invertedRectGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour);
     }
 
     static void drawSnake(SnakeBlock s) {
@@ -144,7 +144,7 @@ class Draw {
             drawCircle(x*BLOCK_SIZE+BLOCK_SIZE/2, y*BLOCK_SIZE+BLOCK_SIZE/2, BLOCK_SIZE/4, colour);
             drawAura(new Vector2(x*BLOCK_SIZE+BLOCK_SIZE/2, y*BLOCK_SIZE+BLOCK_SIZE/2), BLOCK_SIZE/4, BLOCK_SIZE/6, colour);
         }
-        invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
+        invertedRectGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour);
     }
 
     /**
@@ -154,35 +154,34 @@ class Draw {
      * @param rectWidth the width of the rectangle
      * @param rectHeight the height of the rectangle
      * @param strokeWidth the width of the line
-     * @param red the red component
-     * @param green the green component
-     * @param blue the blue component
-     * @param intensity the brightness of the glow
+     * @param colour the colour of the glow
      */
-    private static void invertedQuadGlow(float xStart, float yStart, float rectWidth, float rectHeight, float strokeWidth, float red, float green, float blue, float intensity) {
+    static void invertedRectGlow(float xStart, float yStart, float rectWidth, float rectHeight, float strokeWidth, Colour colour) {
         yStart = SCREEN_HEIGHT-yStart-rectHeight;
-
+        setColour(colour);
+        Colour blank = colour.clone();
+        blank.intensity = 0;
         glBegin(GL_QUAD_STRIP);
 
-            glColor4f(red, green, blue, intensity);
+            setColour(colour);
             glVertex2f(xStart,yStart);
-            glColor4f(red, green, blue, 0);
+            setColour(blank);
             glVertex2f(xStart+strokeWidth, yStart+strokeWidth);
-            glColor4f(red, green, blue, intensity);
+            setColour(colour);
             glVertex2f(xStart+rectWidth,yStart);
-            glColor4f(red, green, blue, 0);
+            setColour(blank);
             glVertex2f(xStart+rectWidth-strokeWidth, yStart+strokeWidth);
-            glColor4f(red, green, blue, intensity);
+            setColour(colour);
             glVertex2f(xStart+rectWidth, yStart+rectHeight);
-            glColor4f(red, green, blue, 0);
+            setColour(blank);
             glVertex2f(xStart+rectWidth-strokeWidth, yStart+rectHeight-strokeWidth);
-            glColor4f(red, green, blue, intensity);
+            setColour(colour);
             glVertex2f(xStart,yStart+rectHeight);
-            glColor4f(red, green, blue, 0);
+            setColour(blank);
             glVertex2f(xStart+strokeWidth, yStart+rectHeight-strokeWidth);
-            glColor4f(red, green, blue, intensity);
+            setColour(colour);
             glVertex2f(xStart,yStart);
-            glColor4f(red, green, blue, 0);
+            setColour(blank);
             glVertex2f(xStart+strokeWidth, yStart+strokeWidth);
 
         glEnd();
