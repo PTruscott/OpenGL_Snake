@@ -19,6 +19,8 @@ public class GameRenderer {
     private LinkedList<SnakeBlock> snake;
     private int fps;
     private long lastFPS;
+    private float startGlow;
+    private float startGlowTarget;
 
     /**
      * Sets up a new game renderer to show the game on screen
@@ -28,6 +30,8 @@ public class GameRenderer {
         this.textRenderers = textRenderers;
         this.game = game;
         this.snake = snake;
+        startGlow = MIN_SNAKE_GLOW;
+        startGlowTarget = 1;
     }
 
     /**
@@ -109,7 +113,17 @@ public class GameRenderer {
         drawText(textRenderers[0], "BORING MAP", x + textLength, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
 
         y += textHeight*4;
-        drawText(textRenderers[0], "PRESS SPACE TO START", x, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
+        colour = Colour.WHITE();
+        if (startGlow < startGlowTarget) {
+            startGlow += GLOW_SPEED;
+            if (startGlow >= startGlowTarget) startGlowTarget = MIN_SNAKE_GLOW;
+        }
+        else {
+            startGlow -= GLOW_SPEED;
+            if (startGlow <= startGlowTarget) startGlowTarget = 1;
+        }
+        colour.intensity = startGlow;
+        drawText(textRenderers[0], "PRESS SPACE TO START", x, y, colour, TextRenderer.Alignment.CENTRE);
     }
 
     private void drawMap(int phase) {

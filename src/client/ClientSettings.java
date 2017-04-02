@@ -34,9 +34,10 @@ public class ClientSettings {
       new Colour(0, 0, 1), //phase 2
       new Colour(1, 1, 0)  //phase 3
     };
-    static final float MIN_SNAKE_GLOW = 0.2f;
+    public static final float MIN_SNAKE_GLOW = 0.2f;
     static final float PORTAL_SPEED = 6;
     public static final float RIPPLE_SPEED = 1;
     public static boolean DISPLAY_FPS = false;
     public static boolean DISPLAY_SCORE = true;
+    public static final float GLOW_SPEED = 0.006f;
 }
