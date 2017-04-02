@@ -52,15 +52,30 @@ public class GameState {
             int otherPhase = phases.get(rand.nextInt(phases.size() - 2) + 1);
             int otherPhase2 = phases.get(rand.nextInt(phases.size() - 2) + 1);
             if (otherPhase == otherPhase2) otherPhase2 = phases.get(phases.size() - 1);
-            blocks[phases.get(0)][7*phases.size()][20] = new Portal(phases.get(0), otherPhase);
-            blocks[otherPhase][7*phases.size()][20] = new Portal(otherPhase, phases.get(0));
 
-            blocks[phases.get(0)][12][7*phases.size()] = new Portal(phases.get(0), otherPhase2);
-            blocks[otherPhase2][12][7*phases.size()] = new Portal(otherPhase2, phases.get(0));
+            int phase = phases.get(0);
+
+            setBlock(phase, new Portal(phase, otherPhase), generateCoords(phase));
+            setBlock(otherPhase, new Portal(otherPhase, phase), generateCoords(otherPhase));
+
+
+            setBlock(phase, new Portal(phase, otherPhase2), generateCoords(phase));
+            setBlock(otherPhase, new Portal(otherPhase2, phase), generateCoords(otherPhase2));
 
             phases.remove(0);
         }
+    }
 
+    private Vector2 generateCoords(int phase) {
+        Random rand = new Random();
+        Vector2 pos = new Vector2(0, 0);
+        while (!(getBlock(phase, pos) instanceof Air)) {
+            int x = rand.nextInt(getMapWidth()-STARTING_RUNWAY*2)+STARTING_RUNWAY;
+            int y = rand.nextInt(getMapHeight()-STARTING_RUNWAY*2)+STARTING_RUNWAY;
+            pos = new Vector2(x, y);
+        }
+
+        return pos;
     }
 
     private void generateMap() {
@@ -81,7 +96,7 @@ public class GameState {
                     if (x == 0 || y == 0 || y == getMapHeight()-1 || x == getMapWidth()-1) {
                         blocks[i][x][y] = new Wall(i);
                     }
-                    else {
+                    else if (RANDOM_MAP){
                         int xNoise = (int)(xStart+x*((XEnd-xStart)/getMapWidth()));
                         int yNoise = (int)(yStart+y*((yEnd-yStart)/getMapHeight()));
                         double val = simplexNoise.getNoise(xNoise,yNoise);
@@ -91,6 +106,9 @@ public class GameState {
                         else {
                             blocks[i][x][y] = new Air();
                         }
+                    }
+                    else {
+                        blocks[i][x][y] = new Air();
                     }
                 }
             }
@@ -122,8 +140,12 @@ public class GameState {
 
     }
 
-    Block getBlock(Vector2 pos) {
+    private Block getBlock(int phase, Vector2 pos) {
         return blocks[phase][(int)pos.getX()][(int)pos.getY()];
+    }
+
+    Block getBlock(Vector2 pos) {
+        return getBlock(phase, pos);
     }
 
     public void setBlock(Block b, Vector2 pos) {
@@ -136,7 +158,7 @@ public class GameState {
     }
 
     void clearBlock(Vector2 pos) {
-        blocks[phase][(int)pos.getX()][(int)pos.getY()] = null;
+        blocks[phase][(int)pos.getX()][(int)pos.getY()] = new Air();
     }
 
     public int getPhase() {

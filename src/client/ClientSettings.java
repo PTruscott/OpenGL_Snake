@@ -24,6 +24,7 @@ public class ClientSettings {
     public static final int FOOD_REWARD  = 2;
     static final Vector2 STARTING_POS = new Vector2(10, 10);
     static final int STARTING_RUNWAY = 5;
+    static final boolean RANDOM_MAP = true;
 
     // ***** GRAPHICS SETTINGS *****
     public static Colour[] PHASE_COLOURS = {

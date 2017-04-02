@@ -7,6 +7,7 @@ import client.blocks.Portal;
 import client.blocks.SnakeBlock;
 
 import static client.ClientSettings.*;
+import static client.GameManager.out;
 import static org.lwjgl.opengl.GL11.*;
 
 
@@ -122,6 +123,8 @@ class Draw {
             invertedQuadGlow(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE / 5, colour.red, colour.green, colour.blue, colour.intensity);
         }
     }
+
+
 
     static void drawPortal(int x, int y, Portal b, float rotation) {
         Colour other = b.getOtherColour();
