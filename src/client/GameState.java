@@ -55,14 +55,31 @@ public class GameState {
 
             int phase = phases.get(0);
 
-            setBlock(phase, new Portal(phase, otherPhase), generateCoords(phase));
-            setBlock(otherPhase, new Portal(otherPhase, phase), generateCoords(otherPhase));
+            Vector2 pos = generateCoords(phase);
 
+            makeRunway(phase, pos);
+            makeRunway(otherPhase, pos);
+            setBlock(phase, new Portal(phase, otherPhase), pos);
+            setBlock(otherPhase, new Portal(otherPhase, phase), pos);
 
-            setBlock(phase, new Portal(phase, otherPhase2), generateCoords(phase));
-            setBlock(otherPhase, new Portal(otherPhase2, phase), generateCoords(otherPhase2));
+            pos = generateCoords(phase);
+
+            makeRunway(phase, pos);
+            makeRunway(otherPhase2, pos);
+            setBlock(phase, new Portal(phase, otherPhase2), pos);
+            setBlock(otherPhase2, new Portal(otherPhase2, phase), pos);
 
             phases.remove(0);
+        }
+    }
+
+    private void makeRunway(int phase, Vector2 pos) {
+        int x = (int) pos.getX();
+        int y = (int) pos.getY();
+        for (int i = 0; i < STARTING_RUNWAY*2+1; i++) {
+            clearBlock(phase, new Vector2(x+i-STARTING_RUNWAY, y));
+            clearBlock(phase, new Vector2(x, y+i-STARTING_RUNWAY));
+
         }
     }
 
@@ -70,8 +87,8 @@ public class GameState {
         Random rand = new Random();
         Vector2 pos = new Vector2(0, 0);
         while (!(getBlock(phase, pos) instanceof Air)) {
-            int x = rand.nextInt(getMapWidth()-STARTING_RUNWAY*2)+STARTING_RUNWAY;
-            int y = rand.nextInt(getMapHeight()-STARTING_RUNWAY*2)+STARTING_RUNWAY;
+            int x = rand.nextInt(getMapWidth()-(STARTING_RUNWAY+1)*2)+(STARTING_RUNWAY+1);
+            int y = rand.nextInt(getMapHeight()-(STARTING_RUNWAY+1)*2)+(STARTING_RUNWAY+1);
             pos = new Vector2(x, y);
         }
 
@@ -157,8 +174,12 @@ public class GameState {
 
     }
 
-    void clearBlock(Vector2 pos) {
+    private void clearBlock(int phase, Vector2 pos) {
         blocks[phase][(int)pos.getX()][(int)pos.getY()] = new Air();
+    }
+
+    void clearBlock(Vector2 pos) {
+        clearBlock(phase, pos);
     }
 
     public int getPhase() {

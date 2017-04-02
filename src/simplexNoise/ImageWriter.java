@@ -21,7 +21,7 @@ public class ImageWriter {
             for (int x = 0; x < data.length; x++)
             {
                 out(data[x][y]);
-                if (data[x][y]>0.48){
+                if (data[x][y]>0.5){
                     data[x][y]=1;
                 }
                 else {
