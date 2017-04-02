@@ -8,10 +8,10 @@ import javax.imageio.ImageIO;
 
 import static client.GameManager.out;
 
-public class ImageWriter {
+class ImageWriter {
     //just convinence methods for debug
 
-    public static void greyWriteImage(double[][] data){
+    static void greyWriteImage(double[][] data){
         //this takes and array of doubles between 0 and 1 and generates a grey scale image from them
 
         BufferedImage image = new BufferedImage(data.length,data[0].length, BufferedImage.TYPE_INT_RGB);

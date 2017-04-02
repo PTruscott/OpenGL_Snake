@@ -7,7 +7,6 @@ import client.graphics.GameRenderer;
 import client.graphics.PhaseRipple;
 import client.graphics.TextRenderer;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.Display;
 
 import java.util.LinkedList;
 import java.util.Random;
@@ -23,8 +22,6 @@ public class GameManager {
     private GameRenderer gameRenderer;
 
     private long lastFrame;
-    private int fps;
-    private long lastFPS;
     private Vector2 dir;
     private GameState game;
     private float counter;
@@ -179,6 +176,16 @@ public class GameManager {
 
     private void gameKeyboard() {
         switch (Keyboard.getEventKey()) {
+            case Keyboard.KEY_F:
+                if (!Keyboard.getEventKeyState()) {
+                    DISPLAY_FPS = !DISPLAY_FPS;
+                }
+                break;
+            case Keyboard.KEY_C:
+                if (!Keyboard.getEventKeyState()) {
+                    DISPLAY_SCORE = !DISPLAY_SCORE;
+                }
+                break;
             case Keyboard.KEY_UP:
             case Keyboard.KEY_W:
                 if (!dir.equals(0, 1)) {
@@ -215,15 +222,6 @@ public class GameManager {
         int delta = (int) (time - lastFrame);
         lastFrame = time;
         return delta;
-    }
-
-    private void updateFPS() {
-        if (getTime() - lastFPS > 1000) {
-            Display.setTitle("FPS: " + fps);
-            fps = 0;
-            lastFPS += 1000;
-        }
-        fps++;
     }
 
     private void resetGame() {

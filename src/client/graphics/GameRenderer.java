@@ -10,12 +10,15 @@ import java.util.LinkedList;
 
 import static client.ClientSettings.*;
 import static client.graphics.Draw.*;
+import static org.lwjgl.Sys.getTime;
 
 public class GameRenderer {
 
     private GameState game;
     private TextRenderer[] textRenderers;
     private LinkedList<SnakeBlock> snake;
+    private int fps;
+    private long lastFPS;
 
     /**
      * Sets up a new game renderer to show the game on screen
@@ -33,10 +36,25 @@ public class GameRenderer {
     public void render() {
         colourBackground(game.getPhase());
         drawMap(game.getPhase());
+        if (DISPLAY_SCORE) {
+            drawScore();
+        }
+        if (DISPLAY_FPS) {
+            drawFPS();
+        }
     }
 
     public void updateGameState(GameState gs) {
         this.game = gs;
+    }
+
+    private void drawFPS() {
+        drawText(textRenderers[0], ""+fps, SCREEN_WIDTH-10, 100, Colour.WHITE(), TextRenderer.Alignment.RIGHT);
+        updateFPS();
+    }
+    private void drawScore() {
+        int score = (game.getSnakeLength()-STARTING_LENGTH)/FOOD_REWARD;
+        drawText(textRenderers[0], ""+score, SCREEN_WIDTH-10, 10, Colour.WHITE(), TextRenderer.Alignment.RIGHT);
     }
 
     public void drawMenu(boolean drawScore) {
@@ -113,5 +131,13 @@ public class GameRenderer {
 
 
          drawRectGlow(p.getStartX()-r, p.getStartY()-r, 0, r*2, r*2, PHASE_COLOURS[newPhase].clone(), 5);
+    }
+
+    private void updateFPS() {
+        if (getTime() - lastFPS > 1000) {
+            fps = 0;
+            lastFPS += 1000;
+        }
+        fps++;
     }
 }

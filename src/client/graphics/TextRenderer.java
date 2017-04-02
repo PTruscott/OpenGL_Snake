@@ -65,7 +65,7 @@ public class TextRenderer {
     void drawText(String text, float x, float y, Alignment alignment) {
         glBindTexture(GL_TEXTURE_2D, this.fontTextureId);
         glBegin(GL_QUADS);
-        y = ClientSettings.SCREEN_HEIGHT - y;
+        y = ClientSettings.SCREEN_HEIGHT - y - getCharHeight();
 
         if (alignment == Alignment.RIGHT || alignment == Alignment.CENTRE) {
             float xShift = -getStringWidth(text);
