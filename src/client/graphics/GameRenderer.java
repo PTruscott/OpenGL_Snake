@@ -82,7 +82,7 @@ public class GameRenderer {
         //centre of left would be mid - length
         Colour colour;
         if (MENU_STATE == 0) {
-            colour = PHASE_COLOURS[0].clone();
+            colour = PHASE_COLOURS[game.getPhase()].clone();
         }
         else {
             colour = Colour.WHITE();
@@ -98,7 +98,7 @@ public class GameRenderer {
 
         y += textHeight*3;
         if (MENU_STATE == 1) {
-            colour = PHASE_COLOURS[0].clone();
+            colour = PHASE_COLOURS[game.getPhase()].clone();
         }
         else {
             colour = Colour.WHITE();
