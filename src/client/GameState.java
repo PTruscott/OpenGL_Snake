@@ -20,8 +20,10 @@ public class GameState {
     private boolean gameRunning;
     private int portalRotation;
     private PhaseRipple ripple;
+    private boolean menu;
 
-    GameState() {
+    GameState(boolean menu) {
+        this.menu = menu;
         snakeLength = STARTING_LENGTH;
         gameRunning = false;
         Random rand = new Random();
@@ -36,40 +38,69 @@ public class GameState {
 
         blocks[phase][10][17] = new Food(phase);
         int nextPhase = (phase+1)%4;
-        blocks[nextPhase][13][4] = new Food(nextPhase);
+        blocks[nextPhase][getMapWidth()/2][STARTING_RUNWAY] = new Food(nextPhase);
 
     }
 
     private void generatePortals() {
-        ArrayList<Integer> phases = new ArrayList<>();
-        phases.add(0);
-        phases.add(1);
-        phases.add(2);
-        phases.add(3);
+        if (!menu) {
+            ArrayList<Integer> phases = new ArrayList<>();
+            phases.add(0);
+            phases.add(1);
+            phases.add(2);
+            phases.add(3);
 
-        Random rand = new Random();
-        while (phases.size() > 2) {
-            int otherPhase = phases.get(rand.nextInt(phases.size() - 2) + 1);
-            int otherPhase2 = phases.get(rand.nextInt(phases.size() - 2) + 1);
-            if (otherPhase == otherPhase2) otherPhase2 = phases.get(phases.size() - 1);
+            Random rand = new Random();
+            while (phases.size() > 2) {
+                int otherPhase = phases.get(rand.nextInt(phases.size() - 2) + 1);
+                int otherPhase2 = phases.get(rand.nextInt(phases.size() - 2) + 1);
+                if (otherPhase == otherPhase2) otherPhase2 = phases.get(phases.size() - 1);
 
-            int phase = phases.get(0);
+                int phase = phases.get(0);
 
-            Vector2 pos = generateCoords(phase);
+                Vector2 pos = generateCoords(phase);
 
-            makeRunway(phase, pos);
-            makeRunway(otherPhase, pos);
-            setBlock(phase, new Portal(phase, otherPhase), pos);
-            setBlock(otherPhase, new Portal(otherPhase, phase), pos);
+                makeRunway(phase, pos);
+                makeRunway(otherPhase, pos);
+                setBlock(phase, new Portal(phase, otherPhase), pos);
+                setBlock(otherPhase, new Portal(otherPhase, phase), pos);
 
-            pos = generateCoords(phase);
+                pos = generateCoords(phase);
 
-            makeRunway(phase, pos);
-            makeRunway(otherPhase2, pos);
-            setBlock(phase, new Portal(phase, otherPhase2), pos);
-            setBlock(otherPhase2, new Portal(otherPhase2, phase), pos);
+                makeRunway(phase, pos);
+                makeRunway(otherPhase2, pos);
+                setBlock(phase, new Portal(phase, otherPhase2), pos);
+                setBlock(otherPhase2, new Portal(otherPhase2, phase), pos);
 
-            phases.remove(0);
+                phases.remove(0);
+            }
+        }
+        else {
+            int phase;
+            int otherPhase;
+            for (int i = 0; i < 4; i++) {
+                phase = (this.phase+i)%4;
+                otherPhase = (phase+1)%4;
+                Vector2 pos;
+                switch (i) {
+                    default:
+                    case 0:
+                        pos = new Vector2(STARTING_RUNWAY, STARTING_RUNWAY);
+                        break;
+                    case 1:
+                        pos = new Vector2(getMapWidth()-STARTING_RUNWAY, STARTING_RUNWAY);
+                        break;
+                    case 2:
+                        pos = new Vector2(getMapWidth()-STARTING_RUNWAY, getMapHeight()-STARTING_RUNWAY);
+                        break;
+                    case 3:
+                        pos = new Vector2(STARTING_RUNWAY, getMapHeight()-STARTING_RUNWAY);
+                        break;
+                }
+
+                setBlock(phase, new Portal(phase, otherPhase), pos);
+                setBlock(otherPhase, new Portal(otherPhase, phase), pos);
+            }
         }
     }
 
@@ -113,7 +144,7 @@ public class GameState {
                     if (x == 0 || y == 0 || y == getMapHeight()-1 || x == getMapWidth()-1) {
                         blocks[i][x][y] = new Wall(i);
                     }
-                    else if (RANDOM_MAP){
+                    else if (RANDOM_MAP && !menu){
                         int xNoise = (int)(xStart+x*((XEnd-xStart)/getMapWidth()));
                         int yNoise = (int)(yStart+y*((yEnd-yStart)/getMapHeight()));
                         double val = simplexNoise.getNoise(xNoise,yNoise);
@@ -165,10 +196,6 @@ public class GameState {
         return getBlock(phase, pos);
     }
 
-    public void setBlock(Block b, Vector2 pos) {
-        setBlock(phase, b, pos);
-    }
-
     void setBlock(int phase, Block b, Vector2 pos) {
         blocks[phase][(int)pos.getX()][(int)pos.getY()] = b;
 
@@ -213,5 +240,9 @@ public class GameState {
 
     void setRipple(PhaseRipple ripple) {
         this.ripple = ripple;
+    }
+
+    boolean isMenu() {
+        return menu;
     }
 }

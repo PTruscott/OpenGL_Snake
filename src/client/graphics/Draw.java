@@ -14,9 +14,9 @@ import static org.lwjgl.opengl.GL11.*;
  * Created by peran on 3/5/17.
  *  used for draw methods
  */
-class Draw {
+public class Draw {
 
-    static void drawRect(float x, float y, float rotation, float width, float height, Colour colour) {
+    public static void drawRect(float x, float y, float rotation, float width, float height, Colour colour) {
         setColour(colour);
 
         glPushMatrix();

@@ -38,6 +38,7 @@ public class ClientSettings {
     static final float PORTAL_SPEED = 6;
     public static final float RIPPLE_SPEED = 1;
     public static boolean DISPLAY_FPS = false;
-    public static boolean DISPLAY_SCORE = true;
+    public static boolean DISPLAY_SCORE = false;
     public static final float GLOW_SPEED = 0.006f;
+    public static final float MENU_TINT = 0.5f;
 }

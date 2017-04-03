@@ -207,6 +207,25 @@ public class Vector2{
     }
 
     /**
+     * Rotates the vector clockwise
+     * @param rotation the amount in degrees to be rotated
+     * @return the roated vector
+     */
+    public Vector2 rotate(int rotation) {
+        double ang = Math.atan(x/y);
+        if (Double.isInfinite(ang)) {
+            ang = 0;
+        } else if (y < 0) {
+            ang += Math.PI;
+        }
+        ang += Math.toRadians(rotation);
+        float newX = (float)(Math.sin(ang));
+        float newY = (float)(Math.cos(ang));
+
+        return (new Vector2(newX, newY)).normalise();
+    }
+
+    /**
      * Deviates a vector by a set amount
      * @param inaccuracy the inaccuracy to add to the vector
      * @return the vector with added inaccuracy

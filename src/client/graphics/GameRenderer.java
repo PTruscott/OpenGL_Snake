@@ -61,7 +61,7 @@ public class GameRenderer {
         drawText(textRenderers[0], ""+score, SCREEN_WIDTH-BLOCK_SIZE*1.5f, BLOCK_SIZE*1.5f, Colour.WHITE(), TextRenderer.Alignment.RIGHT);
     }
 
-    public void drawMenu(boolean drawScore) {
+    public void drawMenu(boolean drawScore, int score, int phase) {
 
         float y = SCREEN_HEIGHT/4;
         float x = SCREEN_WIDTH/2;
@@ -69,7 +69,6 @@ public class GameRenderer {
         drawText(textRenderers[1], "WELCOME TO SNAKE", x, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
         if (drawScore) {
             y += textRenderers[1].getCharHeight()*2;
-            int score = (game.getSnakeLength()-STARTING_LENGTH)/FOOD_REWARD;
             drawText(textRenderers[0], "YOUR SCORE WAS "+score, x, y, Colour.WHITE(), TextRenderer.Alignment.CENTRE);
         }
 
@@ -82,7 +81,7 @@ public class GameRenderer {
         //centre of left would be mid - length
         Colour colour;
         if (MENU_STATE == 0) {
-            colour = PHASE_COLOURS[game.getPhase()].clone();
+            colour = PHASE_COLOURS[phase].clone();
         }
         else {
             colour = Colour.WHITE();
@@ -98,7 +97,7 @@ public class GameRenderer {
 
         y += textHeight*3;
         if (MENU_STATE == 1) {
-            colour = PHASE_COLOURS[game.getPhase()].clone();
+            colour = PHASE_COLOURS[phase].clone();
         }
         else {
             colour = Colour.WHITE();
@@ -145,6 +144,56 @@ public class GameRenderer {
                 drawSnake(s);
             }
         }
+    }
+
+    /**
+     * Draws the the stencil for the pulse, including the layer underneath
+     */
+    public void drawStencil(boolean drawScore, int score) {
+        int oldPhase = game.getRipple().getOldPhase();
+        int newPhase = game.getRipple().getNewPhase();
+
+        //draws the old phase
+        colourBackground(oldPhase);
+        drawMap(oldPhase);
+        Draw.drawRect(0,0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, new Colour(0,0,0, MENU_TINT));
+        drawMenu(drawScore, score, oldPhase);
+
+        GL11.glEnable(GL11.GL_STENCIL_TEST);
+
+        GL11.glColorMask(false, false, false, false);
+        GL11.glStencilFunc(GL11.GL_ALWAYS, 1, 0xFF); // Set any stencil to 1
+        GL11.glStencilOp(GL11.GL_KEEP, GL11.GL_KEEP, GL11.GL_REPLACE);
+        GL11.glStencilMask(0xFF); // Write to stencil buffer
+        GL11.glDepthMask(false); // Don't write to depth buffer
+        GL11.glClear(GL11.GL_STENCIL_BUFFER_BIT); // Clear stencil buffer (0 by default)
+
+        //sets up the layer to be over drawn
+        PhaseRipple p = game.getRipple();
+        float r = p.getRadius();
+        drawRect(p.getStartX()-r, p.getStartY()-r, 0, r*2, r*2, new Colour(0, 0, 0));
+
+
+        GL11.glStencilFunc(GL11.GL_EQUAL, 1, 0xFF); // Pass test if stencil value is 1
+        GL11.glStencilMask(0x00); // Don't write anything to stencil buffer
+        GL11.glDepthMask(true); // Write to depth buffer
+        GL11.glColorMask(true, true, true, true);
+
+        //GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
+
+        GL11.glColor3f(0, 0, 0);
+        drawRect(p.getStartX()-r, p.getStartY()-r, 0, r*2, r*2, new Colour(0, 0, 0));
+
+        //draws the new phase in the circle
+        colourBackground(newPhase);
+        drawMap(newPhase);
+        Draw.drawRect(0,0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, new Colour(0,0,0, MENU_TINT));
+        drawMenu(drawScore, score, newPhase);
+
+        GL11.glDisable(GL11.GL_STENCIL_TEST);
+
+
+        drawRectGlow(p.getStartX()-r, p.getStartY()-r, 0, r*2, r*2, PHASE_COLOURS[newPhase].clone(), 5);
     }
 
     /**

@@ -3,11 +3,10 @@ package client;
 import client.blocks.Food;
 import client.blocks.Portal;
 import client.blocks.SnakeBlock;
-import client.graphics.GameRenderer;
-import client.graphics.PhaseRipple;
-import client.graphics.TextRenderer;
+import client.graphics.*;
 import org.lwjgl.input.Keyboard;
 
+import javax.swing.*;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -27,20 +26,22 @@ public class GameManager {
     private float counter;
     private boolean firstGame;
     private LinkedList<SnakeBlock> snake;
+    private int score;
 
 
     GameManager(TextRenderer[] textRenderers) {
         super();
+        score = 0;
         firstGame = true;
         snake = new LinkedList<>();
-        resetGame();
+        menuGame();
         gameRenderer = new GameRenderer(game, textRenderers, snake);
         lastFrame = getTime();
     }
 
     void run() {
         update();
-        if (game.isRunning()) {
+        if (game.isRunning() && !game.isMenu()) {
             if (game.getRipple().isAlive()) {
                 gameRenderer.drawStencil();
             }
@@ -49,7 +50,14 @@ public class GameManager {
             }
         }
         else {
-            gameRenderer.drawMenu(!firstGame);
+            if (game.getRipple().isAlive()) {
+                gameRenderer.drawStencil(!firstGame, score);
+            }
+            else {
+                gameRenderer.render();
+                Draw.drawRect(0,0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, new Colour(0,0,0, MENU_TINT));
+                gameRenderer.drawMenu(!firstGame, score, game.getPhase());
+            }
         }
     }
 
@@ -59,8 +67,6 @@ public class GameManager {
             makeMovement();
             updateSnake();
         }
-
-        //updateFPS(); // update FPS Counter
     }
 
     private void updateSnake() {
@@ -74,7 +80,6 @@ public class GameManager {
         if (snake.size() > length) {
             snake.subList(length, snake.size()).clear();
         }
-
     }
 
     private void makeMovement() {
@@ -100,6 +105,9 @@ public class GameManager {
                 temp = temp.mult(BLOCK_SIZE);
                 game.setRipple(new PhaseRipple(temp.getX()+BLOCK_SIZE/2, temp.getY() + BLOCK_SIZE/2, oldPhase, newPhase));
                 gameRenderer.updateGameState(game);
+                if (game.isMenu()) {
+                    dir = dir.rotate(270);
+                }
             }
 
             if (validPos(newPos)) {
@@ -112,7 +120,11 @@ public class GameManager {
                 }
                 snake.add(0, new SnakeBlock(true, newPos, game.getPhase()));
             }
-            else game.endGame();
+            else {
+                game.endGame();
+                score = (game.getSnakeLength()-STARTING_LENGTH)/FOOD_REWARD;
+                menuGame();
+            }
 
             counter -= 100;
         }
@@ -155,7 +167,7 @@ public class GameManager {
     private void pollKeyboard() {
         while (Keyboard.next()) {
             // Runs if next key has been PRESSED.
-            if (game.isRunning()) {
+            if (game.isRunning() && !game.isMenu()) {
                 gameKeyboard();
             }
             //If it's game over
@@ -252,10 +264,25 @@ public class GameManager {
         return delta;
     }
 
+    private void menuGame() {
+        counter = 0;
+        snake.clear();
+        game = new GameState(true);
+        if (gameRenderer != null) {
+            gameRenderer.updateGameState(game);
+        }
+
+        game.startGame();
+        dir = new Vector2(0, -1);
+
+        snake.add(0, new SnakeBlock(true, new Vector2(STARTING_RUNWAY, game.getMapHeight()/2), game.getPhase()));
+        getDelta();
+    }
+
     private void resetGame() {
         counter = 0;
         snake.clear();
-        game = new GameState();
+        game = new GameState(false);
         if (gameRenderer != null) {
             gameRenderer.updateGameState(game);
         }
