@@ -40,7 +40,7 @@ public class GameRenderer {
     public void render() {
         colourBackground(game.getPhase());
         drawMap(game.getPhase());
-        if (DISPLAY_SCORE) {
+        if (DISPLAY_SCORE && !game.isMenu()) {
             drawScore();
         }
         if (DISPLAY_FPS) {
@@ -206,6 +206,9 @@ public class GameRenderer {
          //draws the old phase
          colourBackground(oldPhase);
          drawMap(oldPhase);
+         if (DISPLAY_SCORE && !game.isMenu()) {
+             drawScore();
+         }
 
          GL11.glEnable(GL11.GL_STENCIL_TEST);
 
@@ -235,6 +238,9 @@ public class GameRenderer {
          //draws the new phase in the circle
          colourBackground(newPhase);
          drawMap(newPhase);
+         if (DISPLAY_SCORE && !game.isMenu()) {
+             drawScore();
+         }
 
          GL11.glDisable(GL11.GL_STENCIL_TEST);
 

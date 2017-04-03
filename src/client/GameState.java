@@ -242,7 +242,7 @@ public class GameState {
         this.ripple = ripple;
     }
 
-    boolean isMenu() {
+    public boolean isMenu() {
         return menu;
     }
 }
