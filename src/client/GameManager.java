@@ -139,6 +139,14 @@ public class GameManager {
             x = r.nextInt(game.getMapWidth()-1);
             y = r.nextInt(game.getMapHeight()-1);
             valid = validPos(x, y);
+            if (!game.isMenu() && RANDOM_MAP) {
+                int counter = 0;
+                if (!validPos(x-1, y)) counter++;
+                if (!validPos(x+1, y)) counter++;
+                if (!validPos(x, y-1)) counter++;
+                if (!validPos(x, y+1)) counter++;
+                if (counter > 2) valid = false;
+            }
         }
         return new Vector2(x, y);
     }
@@ -214,6 +222,7 @@ public class GameManager {
         switch (Keyboard.getEventKey()) {
             case Keyboard.KEY_ESCAPE:
                 game.endGame();
+                menuGame();
                 break;
             case Keyboard.KEY_F:
                 if (!Keyboard.getEventKeyState()) {
